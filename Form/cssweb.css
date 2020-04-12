@@ -1,0 +1,103 @@
+body {
+    background-color: #00b241;
+    padding: 22;
+    margin-left: 4;
+}
+
+p {
+    margin: 30px;
+    background: yellow;
+    border: 1px solid black;
+    outline: 1px solid red;
+    outline-offset: 7px;
+}
+
+h1 {
+    margin: 30px;
+    background: darkgrey;
+    border: 1px solid black;
+    outline: 1px solid #00b241;
+    outline-offset: 3px;
+}
+
+.div {
+    background-color: #f9f9f9;
+    padding-left: 19px;
+    padding-bottom: 44px;
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.input5 {
+    padding: 50;
+    color: black;
+    height: 137px;
+    width: 333;
+    border-style: solid;
+    border-radius: 90px;
+    border-width: 1px;
+    border-color: darkblue;
+}
+
+.input2 {
+    color: pink;
+    padding-right: 192;
+    padding-top: 12;
+    padding-bottom: 13;
+    padding-left: 14;
+    margin-bottom: 19;
+    border-style: solid;
+    border-radius: 90px;
+    border-width: 1px;
+}
+
+.input3 {
+    padding-right: 192;
+    padding-top: 12;
+    padding-bottom: 13;
+    padding-left: 14;
+    margin-bottom: 19;
+    border-style: solid;
+    border-radius: 90px;
+    border-width: 1px;
+}
+
+.input4 {
+    color: yellow;
+    padding-right: 192;
+    padding-top: 12;
+    padding-bottom: 13;
+    padding-left: 14;
+    margin-bottom: 19;
+    border-style: solid;
+    border-radius: 90px;
+    border-width: 1px;
+}
+
+.reg {
+    background-color: #00b241;
+    color: white;
+    width: 80;
+    height: 50;
+    padding-right: 192;
+    margin-top: 22;
+    padding-left: 110;
+    margin: 30px;
+    background: darkblue;
+    border: 1px solid #d41c3c;
+    outline: 1px solid darkturquoise;
+    outline-offset: 7px;
+}
+
+.input1 {
+    color: black;
+    padding-right: 192;
+    padding-top: 12;
+    padding-bottom: 13;
+    padding-left: 14;
+    margin-bottom: 19;
+    border-style: solid;
+    border-radius: 90px;
+    border-width: 1px;
+}

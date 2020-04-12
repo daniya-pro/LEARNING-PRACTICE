@@ -1,0 +1,2 @@
+alert("daniya");
+alert("kashan")

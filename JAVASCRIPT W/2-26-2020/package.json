@@ -1,0 +1,15 @@
+{
+  "name": "k",
+  "version": "1.0.0",
+  "description": "my work",
+  "main": "index.html",
+  "dependencies": {
+    "sweetalert2": "^9.10.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
