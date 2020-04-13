@@ -1,27 +1,19 @@
-var space = name.indexOf(' ')
-var spacei = ' '
-var name = ["Adam pagal", "Alex lol", "Aaron mad", "Ben mental", "Carl gadha", "Daniya haider", "David worship", "Edward falsegod", ]
+function namecap() {
+
+    var name1 = ["adam pagal", "alex lol", "aaron mad", "ben mental", "carl gadha", "daniya haider", "david worship", "edward falsegod", ]
+    var Nameffc = []
+    var Name2lfc = []
+    var lstothr = []
+    var Lastothr = []
+    var whole = []
 
 
-var firstchars = []
-
-var /*new*/ firstandlast = []
-
-var lastchars = []
-
-var otherchar = []
-
-var first = []
-
-var last = []
-
-for (var i = 0; i < array.length; i++) {
-
-    lastchars[i] = name.slice(space, space + 1)
-
-
-    firstchars[i] = name.slice(0, 1)
-
-    first[i] = name.splice
-
-}
+    for (var i = 0; i < name1.length; i++) {
+        var spaceind = name1[i].indexOf(' ')
+        Nameffc[i] = name1[i].slice(0, 1).toUpperCase()
+        Name2lfc[i] = name1[i].slice(spaceind + 1, spaceind + 2).toUpperCase()
+        lstothr[i] = name1[i].slice(1, spaceind)
+        Lastothr[i] = name1[i].slice(spaceind + 2)
+        whole[i] = Nameffc[i] + lstothr[i] + ' ' + Name2lfc[i] + Lastothr[i name1[i] = whole[i] document.write('<p>' + name1[i] + '<br/></p>')
+        }
+    }
