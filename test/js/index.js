@@ -17,3 +17,61 @@ function namecap() {
         whole[i] = Nameffc[i] + lstothr[i] + ' ' + Name2lfc[i] + Lastothr[i name1[i] = whole[i] document.write('<p>' + name1[i] + '<br/></p>')
         }
     }
+
+
+    //other test
+    function $dollar(bill) {
+        /*Note if youre bill is 100$ or more than hundred so your tax and shipping is free butt if it is between 50 and 100 it will take shipping fee in $ and wewill also take tex of 3 percent(%)$ bu if it is smaller than 50 we will take only shipping fee*/
+
+
+
+        //variables start here
+
+        var total;
+
+        //variables  end here
+
+        // if start here
+        if (isNaN(bill)) {
+
+            console.log('noob NaN')
+
+        }
+
+
+        // if end here
+
+        // another if start here
+
+        if (bill >= 100) {
+
+            var total = bill
+
+
+            console.log("you're bill is " + total)
+
+
+        }
+
+        //another if end here
+
+        //else if starts here
+        else if (bill <= 50) {
+
+            total = bill + 5
+
+
+
+            console.log("you'r bill is " + total)
+        } else if (bill > 50) {
+
+            total = (bill + (5 + 3))
+
+
+
+            console.log("you'r bill is " + total)
+
+        } else {
+            alert('noob')
+        }
+    }
