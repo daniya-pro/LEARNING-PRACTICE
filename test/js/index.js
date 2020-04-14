@@ -14,7 +14,7 @@ function namecap() {
         Name2lfc[i] = name1[i].slice(spaceind + 1, spaceind + 2).toUpperCase()
         lstothr[i] = name1[i].slice(1, spaceind)
         Lastothr[i] = name1[i].slice(spaceind + 2)
-        whole[i] = Nameffc[i] + lstothr[i] + ' ' + Name2lfc[i] + Lastothr[i name1[i] = whole[i] document.write('<p>' + name1[i] + '<br/></p>')
+        whole[i] = Nameffc[i] + lstothr[i] + ' ' + Name2lfc[i] + Lastothr[i] + name1[i] + whole[i] + document.write('<p>' + name1[i] + '<br/></p>')
         }
     }
 
