@@ -1,0 +1,57 @@
+
+
+
+
+
+
+
+td{
+
+height:5pc;
+width: 5pc;
+
+
+}
+#white {
+    background-color: white !important;
+    border: 1px solid white;
+    width: 5pc;
+    height: 5pc;
+}
+
+p {
+    font-family: p;
+  }
+
+@font-face {
+    font-family: p;
+    src: url(../../font/JosefinSans-Regular.ttf);
+}
+
+
+  
+
+.lg {
+    background-color: #a3d5bf;
+     width: 5pc;
+    height: 5pc;
+}
+
+.dg {
+    background-color: #5ed89c;
+     width: 5pc;
+    height: 5pc;
+}
+
+.rd {
+    background-color: #f88379;
+     width: 5pc;
+    height: 5pc;
+}
+
+.ph {
+    background-color: #ffc3a0;
+     width: 5pc;
+    height: 5pc;
+}
+
