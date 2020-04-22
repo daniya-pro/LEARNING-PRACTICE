@@ -3,6 +3,7 @@ html {
 }
 
 .calculatr {
+    margin-top: 112px;
     margin-left: 40%;
     background-color: white;
     width: 294px;
@@ -11,9 +12,9 @@ html {
 }
 
 .box {
-    width: 300px;
+    width: 290px;
     height: 50px;
-    margin-left: ;
+
 }
 
 .num {
@@ -21,8 +22,12 @@ html {
     height: 70px;
     width: 70px;
 }
-
-.sm {
+.smmin{background-color: #663399;
+    height: 70px;
+    width: 70px;
+    color: white;
+    margin-left: 4px;}
+.sm,.summin{
     background-color: #663399;
     color: white;
     width: 70px;
