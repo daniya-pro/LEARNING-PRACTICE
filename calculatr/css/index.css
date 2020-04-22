@@ -5,54 +5,41 @@ html {
 .calculatr {
     margin-left: 40%;
     background-color: white;
-    width: 377px;
-    height: 400px;
+    width: 294px;
+    height: 340px;
     border: 1px solid black;
 }
 
-.smmin {
-    background-color: #663399;
-    color: white;
-    width: 90px;
-    height: 70px;
-    border: 1px solid white;
-    margin-left: 4px;
-}
-
 .box {
-    width: 373px;
-    height: 70px;
+    width: 300px;
+    height: 50px;
+    margin-left: ;
 }
 
 .num {
     background-color: #f1f1f1;
     height: 70px;
-    border: 1px solid white;
-    width: 90px;
-    margin-bottom: 0.3pc;
-    margin-right: 0.2px;
+    width: 70px;
 }
 
 .sm {
     background-color: #663399;
     color: white;
-    width: 90px;
+    width: 70px;
     height: 70px;
-    border: 1px solid white;
 }
 
 .cl {
-    background-color: #cc0000;
+    background-color: red;
     color: white;
     height: 70px;
-    width: 90px;
-    border: 1px solid white;
+    width: 70px;
 }
 
-.sm0 {
-    background-color: #66cc33;
+.sm0 {    
+    background-color: chartreuse;
     color: white;
     height: 61px;
     width: 100%;
-    border: 1px solid white;
+    border:1px solid white;
 }
