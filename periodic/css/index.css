@@ -1,57 +1,122 @@
+.n2 {
+    margin-left: -187px;
+    font-family: p;
+    font-weight: bolder;
+    font-size: xx-small;
+    margin-bottom: 51px;
+}
+table{
 
-
-
-
-
-
-
-td{
-
-height:5pc;
-width: 5pc;
+    margin-left: -4px;
+    margin-right: -51px;
 
 
 }
+.n1{
+    margin-left: -202px;
+    font-family: p;
+    font-weight: bolder;
+    font-size: xx-small;
+    margin-bottom: 51px;
+}
+.lpe {
+    background: #c9f;
+}
+
+.dpe {
+    background:#ad87bd;
+}
+
+.yw {
+    background-color: #e9ff08;
+}
+
+.de {
+    background-color: #8eb1e7;
+}
+
+.llpe {
+    background-color: #f0d0e6;
+}
+
+.gn {
+    background-color: #5ed89c;
+}
+
+td {
+    height: 63px !important;
+    width: 93px !important;
+
+}
+
 #white {
-    background-color: white !important;
-    border: 1px solid white;
+    /* background-color: white !important; */
+    /* border: 1px solid white; */
     width: 5pc;
     height: 5pc;
 }
 
-p {
-    font-family: p;
-  }
-
-@font-face {
-    font-family: p;
-    src: url(../../font/JosefinSans-Regular.ttf);
+span {
+    text-align: center;
+    display: block;
+    font-weight: bolder;
 }
 
 
-  
+/*font face*/
 
-.lg {
+@font-face {
+    font-family: p;
+    src: url(../../font/JosefinSans-Thin.ttf);
+    /* src: url(../../fonts/JosefinSans-Thin.ttf); */
+}
+
+@font-face {
+    font-family: spans;
+    src: url(../../font/Manrope-ExtraBold.ttf);
+    /* src: url(../../fonts/neuropolitical.otf); */
+}
+
+
+/*font end*/
+
+.le {
+    background-color: #a3d2d5;
+}
+
+#p1 {
+    font-family: spans;
+    font-size: xx-large
+}
+
+#p {
+    font-family: p;
+    font-weight: bolder;
+    font-size: xx-small
+}
+
+.ln {
     background-color: #a3d5bf;
-     width: 5pc;
+    width: 5pc;
     height: 5pc;
+    text-align: center;
+    font-weight: bolder;
 }
 
 .dg {
     background-color: #5ed89c;
-     width: 5pc;
+    width: 5pc;
     height: 5pc;
 }
 
 .rd {
     background-color: #f88379;
-     width: 5pc;
+    width: 5.5pc;
     height: 5pc;
 }
 
 .ph {
     background-color: #ffc3a0;
-     width: 5pc;
-    height: 5pc;
+    width: 5pc;
+    height: 1pc;
 }
-
