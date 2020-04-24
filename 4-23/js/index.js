@@ -24,10 +24,8 @@ function colorchange3(this3) {
     b.setAttribute("src", "../images/04cb5a80834ece33456879660d8fc00b.png");
   } else {
     b.setAttribute("src", "../images/04cb5a80834ece33456879660d8fc00b8.png");
-  
-  
   }
-var omg = document.getElementById('o')
+  var omg = document.getElementById("o");
   if (
     omg.src ==
     "file:///C:/Users/DANIYA/Desktop/work/LEARNING-PRACTICE/images/off.png"
@@ -39,14 +37,20 @@ var omg = document.getElementById('o')
 }
 var color;
 alert("box pr click kro ");
-function colorchange52() {
+function colorchange52(this52) {
+  var p;
+  p = document.getElementById('p')
   color = prompt(
     "color batao box ka ya phr apna hi koi favourite color batao agr color galt hhua to tumhe koi respnd nhi milega ok?"
   );
   alert("pr hover karo");
+  p.innerText = " Hover Me";
 }
 function colorchange5(this5) {
   this5.style.backgroundColor = color;
+  p.innerText = " Click Me";
+
+
 }
 
 function colorchange4(this4) {
