@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 html {}
 
-=======
 .n2 {
     margin-left: -187px;
     font-family: p;
@@ -23,18 +21,13 @@ table{
     font-size: xx-small;
     margin-bottom: 51px;
 }
->>>>>>> 07930ea0fc7c1a39f745b37ff8af0fd21af2d02b
 .lpe {
     background: #c9f;
 }
 
 .dpe {
-<<<<<<< HEAD
     background: #ad87bd;
-=======
-    background:#ad87bd;
->>>>>>> 07930ea0fc7c1a39f745b37ff8af0fd21af2d02b
-}
+ }
 
 .yw {
     background-color: #e9ff08;
@@ -53,14 +46,9 @@ table{
 }
 
 td {
-<<<<<<< HEAD
-    height: 5pc;
-    width: 5.5pc;
-=======
     height: 63px !important;
-    width: 93px !important;
+    width: 71px !important;
 
->>>>>>> 07930ea0fc7c1a39f745b37ff8af0fd21af2d02b
 }
 
 #white {

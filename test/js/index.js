@@ -18,7 +18,7 @@ function namecap() {
         }
     }
 
-
+namecap()
     //other test
     function $dollar(bill) {
         /*Note if youre bill is 100$ or more than hundred so your tax and shipping is free butt if it is between 50 and 100 it will take shipping fee in $ and wewill also take tex of 3 percent(%)$ bu if it is smaller than 50 we will take only shipping fee*/
@@ -74,4 +74,6 @@ function namecap() {
         } else {
             alert('noob')
         }
+        alert("you're bill is "+total)
     }
+$dollar(parseInt(prompt('tell me your bill  if youre bill is 100$ or more than hundred so your tax and shipping is free butt if it is between 50 and 100 it will take shipping fee in $ and wewill also take tex of 3 percent(%)$ bu if it is smaller than 50 we will take only shipping fee*/')))
