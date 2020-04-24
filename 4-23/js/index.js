@@ -18,9 +18,7 @@ function colorchange3(this3) {
 
   //alert(this3.src)
   if (
-    b.src ==
-    "file:///C:/Users/DANIYA/Desktop/work/LEARNING-PRACTICE/images/04cb5a80834ece33456879660d8fc00b8.png"
-  ) {
+    b.src == "https://daniya-pro.github.io/LEARNING-PRACTICE/images/off.png" ) {
     b.setAttribute("src", "../images/04cb5a80834ece33456879660d8fc00b.png");
   } else {
     b.setAttribute("src", "../images/04cb5a80834ece33456879660d8fc00b8.png");
@@ -28,8 +26,7 @@ function colorchange3(this3) {
   var omg = document.getElementById("o");
   if (
     omg.src ==
-    "file:///C:/Users/DANIYA/Desktop/work/LEARNING-PRACTICE/images/off.png"
-  ) {
+"https://daniya-pro.github.io/LEARNING-PRACTICE/images/off.png"  ) {
     omg.setAttribute("src", "../images/on.png");
   } else {
     omg.setAttribute("src", "../images/off.png");
