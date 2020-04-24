@@ -1,0 +1,6 @@
+function colorchange(p){
+   var march = p 
+  
+}
+colorchange('hello')
+
