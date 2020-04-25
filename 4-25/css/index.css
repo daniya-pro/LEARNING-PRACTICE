@@ -1,0 +1,29 @@
+.but {
+    color: white;
+    font-weight: 900;
+    border: 3px solid rosybrown;
+    background: black;
+    font-size: xx-small;
+}
+html{
+    font-family: k;
+        font-size: medium;
+
+
+}
+h1{
+
+    font-size: x-large !important;
+
+
+}
+p,button{
+
+    font-family: k;
+
+}
+
+@font-face{
+    font-family: k;
+    src: url(../../font/Manrope-ExtraBold.ttf);
+}
