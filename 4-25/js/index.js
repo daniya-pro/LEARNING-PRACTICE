@@ -36,4 +36,27 @@ function expandLoris() {
     
   }
 
+}    
+
+function list(){
+var getele = document.getElementById("p1")
+var lists = document.getElementById("list123")
+if (getele.innerText === "Show List") {
+
+
+lists.innerHTML = "Slow Loris <br> Medium Loris <br> Fast Loris"
+
+ 
+ getele.innerText = "Hide List";
+}
+else  {
+
+  lists.innerHTML = ""
+     
+  getele.innerText = "Show List";
+                           
+  
+}
+
+
 }
