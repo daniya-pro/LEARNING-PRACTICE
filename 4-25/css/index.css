@@ -1,9 +1,16 @@
-.but {
+.but,.but2 {
     color: white;
     font-weight: 900;
     border: 3px solid rosybrown;
     background: black;
     font-size: xx-small;
+}
+.but2{
+
+
+    border: 3px solid darkcyan !important;
+
+
 }
 html{
     font-family: k;
