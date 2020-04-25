@@ -59,4 +59,14 @@ else  {
 }
 
 
+
+}
+
+
+
+function vanish(){
+  
+var p = document.getElementById("pic")
+p.innerHTML = ""
+
 }
