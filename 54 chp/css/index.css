@@ -3,10 +3,43 @@
 color: black;
 
 }
-.but {
-    /* width: 100px; */
+.but,.but2,.but3,.but4,.but5,.but6{
     color: white;
     font-weight: 900;
     border: 3px solid rosybrown;
     background: black;
+    font-size: xx-small;
+}
+.but2{
+
+    border: 3px solid darkcyan !important;
+
+}
+.but3{
+
+    border: 3px solid chocolate  !important;
+
+}
+.but4{
+  
+    border: 3px solid #808080  !important;
+
+}
+.but5{
+
+    border: 3px solid green !important;
+    width: 137px;
+    height: 112px;
+
+
+}
+.but5,.but6{
+
+font-size: xxx-large;
+
+}
+.but6 {
+    border: 3px solid red !important;
+    width: 137px;
+    height: 112px;
 }
