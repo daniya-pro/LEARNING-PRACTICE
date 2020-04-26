@@ -1,0 +1,12 @@
+.a{
+
+color: black;
+
+}
+.but {
+    /* width: 100px; */
+    color: white;
+    font-weight: 900;
+    border: 3px solid rosybrown;
+    background: black;
+}
