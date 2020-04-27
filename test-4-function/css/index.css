@@ -1,0 +1,21 @@
+
+#b1,#b2,#b3{
+    color: white;
+    font-weight: 900;
+    background: black;
+    font-size: xx-small;
+}
+#b1{
+    border: 3px solid cyan;
+
+}
+#b2{
+
+    border: 3px solid red;
+
+}
+#b3{
+    border:3px solid gold;
+}
+h3{    font-weight: 900;
+}

@@ -89,3 +89,5 @@ function input() {
     var pm2 = document.getElementById("pm")
     pm2.style.fontSize = inf
 }
+var m = document.getComputedStyle("but")
+console.log(m)
