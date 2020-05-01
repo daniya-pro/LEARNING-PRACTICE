@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,9 +6,12 @@
         <title>Document</title>
     </head>
     <body>
-        <h3>1st Form</h3>
+        <h1><strong>Note :</strong>After Filling The Fields Press Submit Button</h1>
+        
+        <h3>1st Form (q3)</h3>
         <!--q3 -->
-        <form>
+        <form onsubmit="q3test(event)">     
+
             <br>
             First Name :
             <br>
@@ -21,14 +23,15 @@
             <br>
             <input id="last" type="text">
 
-            <p id="p2"></p>
+            <p id="p2"></p>               
+            <button id="b1" >Submit</button>
+
         </form>
-        <button id="b1" onclick="q3test()">Submit</button>
 <br>
 <br>
 <br>
         <!-- q4 -->
-        <h3>2nd Form</h3>
+        <h3>2nd Form(q4)</h3>
 
         <form onsubmit="q4test(event)">
             No1:
@@ -51,9 +54,9 @@
         <br>
         <!-- q5 -->
         
-        <h3>3rd Form</h3>
+        <h3>3rd Form(q5)</h3>
 
-        <form>
+        <form onsubmit="q5test(event)">
             No1:
             <br>
             <input id="num1" type="text">
@@ -63,18 +66,84 @@
             <br>
             Operator: <br>
             <input id="Op" type="text">
-            <p id="p7"></p>
+            <p id="p6"></p>
             <br>
             No2:
             <br>
             <input id="num2" type="text">
             
-            <p id="p6"></p>
-        </form>
+            <p id="p7"></p>      
+             <button id="b3" >Submit</button>
+
+        </form>        
+<br><br>
+<h3>4th Form (q8)</h3>
+
+        <form onsubmit="q8test(event)">
+            No1:
+            <br>
+            <input id="numb1" type="text">
+            
+        <br>
+
+            <br>
+            No2: <br>
+            <input id="numb2" type="text">   <br><br>     <button id="b4">Submit</button>
+
+<br><br>        </form>
+
+        <h3>5th Form (q11)</h3>
+
+        <form onsubmit="q11(event)"> 
+            No1:
+            <br>
+            <input id="numbe1" type="text">
+            
+        <br>
+
+            <br>
+            No2: <br>
+            <input id="numbe2" type="text"><br><br><button id="b5" >Submit</button>
+<br><br>        </form>
      
-        <button id="b3" onclick="q5test()">Submit</button>
+        <br>
+<br>
+<img src="../images/dice.png" id="dice" alt="Dice" onclick="dices()">
+<br>
+<br>
+<form  onsubmit="q18(event)">
+    <h3>6th Form(q18)</h3>
+Write something so we can reverse it.<br>
+    <input id="n1" type="text">
+   <p id="reverseResult"></p> 
+   <button id="b6">Submit</button>
+</form>
+ <h3>7th form 19</h3>
+ <form  onsubmit="q19(event)">
+
+Write a palindrome word e.g., madam. <br>
+    <input id="n2" type="text">
+    <p id="p"></p> <p id="p2"></p> 
+   <button id="b7">Submit</button>
+</form>
+
+<h3>8th form 29</h3>
+
+<form> <input id="c" onkeyup="convert('C')"> degrees Celsius</p>
+
+    <p><input id="f" onkeyup="convert('F')"> degrees Fahrenheit</p> 
+    </form>
+<!-- <img src="../images/dice 1.png" id="dice" alt="Dice" onclick="dice()"> -->
+<!-- <img src="../images/dice 2.png" id="dice" alt="Dice" onclick="dice()"> -->
+<!-- <img src="../images/dice 3.png" id="dice" alt="Dice" onclick="dice()"> -->
+<!-- <img src="../images/dice 4.png" id="dice" alt="Dice" onclick="dice()"> -->
+<!-- <img src="../images/dice 5.png" id="dice" alt="Dice" onclick="dice()"> -->
+<!-- <img src="../images/dice 6.png" id="dice" alt="Dice" onclick="dice()"> -->
+
+
+
+
 
         <script src="./js/function.js"></script>
     </body>
 </html>
-

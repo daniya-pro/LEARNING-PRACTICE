@@ -1,5 +1,10 @@
+html{
 
-#b1,#b2,#b3{
+font-family: all;
+
+
+}
+button{
     color: white;
     font-weight: 900;
     background: black;
@@ -16,6 +21,48 @@
 }
 #b3{
     border:3px solid gold;
+    
 }
-h3{    font-weight: 900;
+#b4{
+    border: 3px solid chartreuse;
+}
+#b5{
+
+    border: 3px solid darkmagenta;}
+#b6{
+
+    border: 3px solid darkgrey;}
+#b7{
+
+    border: 3px solid deeppink;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#dice{
+
+    height: 131px;
+
+}
+h6,h5,h4,h3,h2,h1{    font-weight: 900;
+}
+@font-face{
+font-family:all;
+
+src: url(../../font/Manrope-ExtraBold.ttf);
+
 }
