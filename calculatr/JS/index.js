@@ -48,7 +48,7 @@ function eq(){
 if(b.value){
 
 var x = document.getElementById("box").value
-   var y= eval(x.replace(' ',''))
+   var y= eval(x.replace('x','*'))
 
    b.value=y;
    flag = false;
