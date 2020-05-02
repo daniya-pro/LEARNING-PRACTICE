@@ -4,8 +4,7 @@ html {
 button{font-size: xx-large;
 }
 .calculatr {
-    margin-top: 112px;
-    margin-left: 40%;
+    margin: 15vh auto;
     background-color: white;
     width: 294px;
     height: 340px;

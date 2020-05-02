@@ -40,20 +40,19 @@ function onclicks(value){
 }
 
 function erase(){
-  var b  = getElement("box")
 b.value = ""
 b.style.color="black"
 
 }
 function eq(){
-  var b  = getElement("box")
-
+if(b.value){
 
 var x = document.getElementById("box").value
    var y= eval(x.replace(' ',''))
+
    b.value=y;
    flag = false;
-
+}
 }
 
  
