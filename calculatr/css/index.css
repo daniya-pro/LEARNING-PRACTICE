@@ -14,9 +14,8 @@ button{font-size: xx-large;
 .box {
     width: 290px;
     height: 50px;
-
+    font-size: xx-large;
 }
-
 .num {
     background-color: #f1f1f1;
     height: 70px;
