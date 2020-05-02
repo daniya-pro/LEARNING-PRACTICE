@@ -1,7 +1,8 @@
 html {
     background: #000;
 }
-
+button{font-size: xx-large;
+}
 .calculatr {
     margin-top: 112px;
     margin-left: 40%;
@@ -42,7 +43,7 @@ html {
 }
 
 .sm0 {    
-    background-color: chartreuse;
+    background-color: cornflowerblue;
     color: white;
     height: 61px;
     width: 100%;

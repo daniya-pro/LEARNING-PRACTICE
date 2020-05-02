@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/index.js"></script>    <script src="./js/two.js"></script>
 
     <link rel="stylesheet" href="./css/index.css">
     <title>document</title>
@@ -12,25 +11,27 @@
 
 <body>
 
-    <div class='calculatr'>
-        <input type="text" class='box'>
-        <button class='num'><h1>1</h1></button>
-        <button class='num'><h1>2</h1></button>
-        <button class='num'><h1>3</h1></button>
-        <button class='sm'><h1>/</h1></button>
-        <button class='num'><h1>4</h1></button>
-        <button class='num'><h1>5</h1></button>
-        <button class='num'><h1>6</h1></button>
-        <button class='sm'><h1>x</h1></button>
-        <button class='num'><h1>7</h1></button>
-        <button class='num'><h1>8</h1></button>
-        <button class='num'><h1>9</h1</button>
-        <button class='smmin'><h1>-</h1></button>
-        <button class='num'><h1>0</h1></button>
-        <button class='num'><h1>.</h1></button>
-        <button class='cl'><h1>C</h1></button>
-        <button class=' sm '><h1>+</h1></button>
-        <button class='sm0 '><h1>=</h1></button>
+    <div id ="c" class='calculatr'>
+        <input id="box" type="text"  class='box' disabled>   
+        <button id="n1" onclick="onclicks(this.innerText)"  class='num'>1</button>
+        <button id="n2" onclick="onclicks(this.innerText)" class='num'>2</button>
+        <button id="n3" onclick="onclicks(this.innerText)" class='num'>3</button>
+        <button id="dev"onclick="onclicks(this.innerText)" class='sm'>/</button>
+        <button id="n4" onclick="onclicks(this.innerText)" class='num'>4</button>
+        <button id="n5" onclick="onclicks(this.innerText)" class='num'>5</button>
+        <button id="n6" onclick="onclicks(this.innerText)" class='num'>6</button>
+        <button id="x" onclick="onclicks(this.innerText)" class='sm'>x</button>
+        <button id="n7" onclick="onclicks(this.innerText)" class='num'>7</button>
+        <button id="n8" onclick="onclicks(this.innerText)" class='num'>8</button>
+        <button id="n9" onclick="onclicks(this.innerText)" class='num'>9</h1</button>
+        <button id="min" onclick="onclicks(this.innerText)" class='smmin'>-</button>
+        <button id="n0" onclick="onclicks(this.innerText)" class='num'>0</button>
+        <button id="dot" onclick="onclicks(this.innerText)" class='num'>.</button>
+        <button id="clear" onclick="erase()" class='cl'>C</button>
+        <button id="plus" onclick="onclicks(this.innerText)" class=' sm '>+</button>
+        <button id="eq" onclick="eq()" class='sm0 '>=</button>
+        <script src="./js/index.js"></script> 
+
 </body>
 
 </html>
