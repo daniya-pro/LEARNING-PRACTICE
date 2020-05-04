@@ -40,10 +40,19 @@ button{font-size: xx-large;
     width: 70px;
 }
 
-.sm0 {    
+.sm0 {
     background-color: cornflowerblue;
     color: white;
     height: 61px;
     width: 100%;
-    border:1px solid white;
+    border: 1px solid white;
+}
+.er {
+    font-size: xx-small;
+    position: absolute;
+    margin-left: 253px;
+    margin-top: 23px;
+    color: white;
+    border: 2px solid darksalmon;
+    background-color: black;
 }

@@ -55,4 +55,7 @@ var x = document.getElementById("box").value
 }
 }
 
- 
+ function erase(){
+if(b.value) b.value= b.value.slice(0, -1);
+
+ }
