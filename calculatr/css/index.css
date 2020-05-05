@@ -12,9 +12,11 @@ button{font-size: xx-large;
 }
 
 .box {
-    width: 290px;
+    width: 214px;
     height: 50px;
     font-size: xx-large;
+    margin-left: 37px;
+    border: none;
 }
 .num {
     background-color: #f1f1f1;
@@ -47,12 +49,23 @@ button{font-size: xx-large;
     width: 100%;
     border: 1px solid white;
 }
-.er {
-    font-size: xx-small;
+.er {font-size: initial;
     position: absolute;
-    margin-left: 253px;
-    margin-top: 23px;
+    margin-left: 257px;
     color: white;
     border: 2px solid darksalmon;
     background-color: black;
+    padding-bottom: 3px;
+}
+.er2 {
+      font-size: initial;
+    position: absolute;
+    color: white;
+    border: 2px solid darksalmon;
+    background-color: black;
+    padding-top: 3px;
+}
+.d{ border: 2px solid lightgray;
+    background-color: #ebebe4;
+    width: 290px;
 }

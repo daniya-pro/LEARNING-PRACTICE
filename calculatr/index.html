@@ -12,8 +12,10 @@
 <body>
 
     <div id ="c" class='calculatr'>
-        <button id="e" class="er" onclick="erase()">erase</button>
-        <input id="box" type="text"  class='box' disabled>   
+        <button id="e" class="er" onclick="erase2()">⌫</button>
+        <button id="e2" class="er2" onclick="erase3()"> ⌦</button>
+        <div class = "d">
+<input id="box" type="text" class="box" disabled="" style="color: black;"></div>
         <button id="n1" onclick="onclicks(this.innerText)"  class='num'>1</button>
         <button id="n2" onclick="onclicks(this.innerText)" class='num'>2</button>
         <button id="n3" onclick="onclicks(this.innerText)" class='num'>3</button>
@@ -31,6 +33,7 @@
         <button id="clear" onclick="erase()" class='cl'>C</button>
         <button id="plus" onclick="onclicks(this.innerText)" class=' sm '>+</button>
         <button id="eq" onclick="eq()" class='sm0 '>=</button>
+        </div>
         <script src="./JS/index.js"></script> 
 
 </body>
