@@ -1,11 +1,19 @@
 html{background: linear-gradient(to right, #0062E6, #33AEFF);
-}.h6{    font-size: 12px;
-  margin-top: 23px;}
+font-family: a;}
+body{font-family: a;}
+div{font-family: a;}
+.h6{    font-size: 12px;
+  margin-top: 23px; font-family: a;}
 section.pricing {
   background: #007bff;
   background: linear-gradient(to right, #0062E6, #33AEFF);
 }
+a{
 
+  color: white !important;
+
+}
+a:active{color: black !important;}
 .pricing .card {
   border: none;
   border-radius: 1rem;
@@ -40,7 +48,11 @@ section.pricing {
 .pricing .text-muted {
   opacity: 0.7;
 }
+.btn{
 
+  background-color: blue;
+
+}
 .pricing .btn {
   font-size: 80%;
   border-radius: 5rem;
@@ -68,4 +80,11 @@ section.pricing {
   background-color: #666666;
   font-size: 56px;
   text-align: center;
+}
+@font-face{
+
+  font-family: a;
+
+  src: url(../../font/Manrope-ExtraBold.ttf);
+
 }
