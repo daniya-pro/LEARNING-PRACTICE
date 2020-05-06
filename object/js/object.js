@@ -55,7 +55,7 @@ var htmlCard =`
   <div class="card-body">
     <h5 class="card-title text-muted text-uppercase text-center" >${plans[i].name}</h5>
     <h6 class="card-price text-center">$${plans[i].price}<span class="period">/Month
-   <h6 class="h6" style="font-size:6px">20% Discount For The Month Of: ${getMonthsNames(plans[i].discountMonths)} </h6>
+   <h6 class="h6" style="font-size: 11px;">20% Discount For The Month Of: ${getMonthsNames(plans[i].discountMonths)} </h6>
     </span></h6>
     <hr>
     <ul class="fa-ul">
