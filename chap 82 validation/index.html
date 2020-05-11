@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstr/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <h1>Form 1</h1>
+    <form action="javascript:void(0)" onSubmit="checkForLastName(event);">
+        Name:
+        <input type="text" style="color:lightgray;width: 220px;" placeholder="syed mohamad kashan haider"
+            name="LastName" id="lastNameField">
+        <br>
+        <p id="p" style="display: inline; color:red;font-size: 13px"></p> <br><button type="submit"
+            class="b1 text-white bg-dark border border-danger border-2px " style="height: 19px;font-size: 11px;"><p class="mb--1.5">Submit Form</p></button>
+    </form>
+    <h1>Form 2</h1>
+    <form action="javascript:void(0)" onSubmit="return checkForSelection();">
+        <select class="text-white bg-dark border border-success border-2px"  id="states">
+            <option value="" selected="selected">
+                SELECT A STATE</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+        </select>&nbsp;&nbsp;
+        <button class="text-white bg-dark border border-danger border-2px" style="height: 19px;font-size: 11px;" type="submit">Submit Form</button>
+    </form>
+<br>
+
+    <form action="javascript:void(0)" onSubmit="return validateRadios();">
+        <input type="radio" name="r1" value="cat"> Cat<br>
+        <input type="radio" name="r1" value="bat"> Bat<br>
+        <input type="radio" name="r1" value="hat"> Hat<br>
+        <input type="submit" value="Submit Form">
+        </form>
+    <script src="./js/index.js"></script>
+    <script src="./bootstr/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

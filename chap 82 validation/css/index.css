@@ -1,0 +1,17 @@
+button {
+    color: white;
+    font-weight: 900;
+    background: black;
+    font-size: xx-small;
+}
+
+
+
+@font-face {
+    font-family: a;
+    src: url(../../font/Manrope-ExtraBold.ttf);
+}
+
+body {
+    font-family: a;
+}
