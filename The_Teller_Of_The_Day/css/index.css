@@ -1,0 +1,27 @@
+ .butn{
+
+border: 1px solid black;
+border-radius: 100px;
+} 
+body{
+
+    font-family: wow;
+
+}
+@font-face{
+font-family: wow;
+src: url(../../font/Manrope-ExtraBold.ttf);
+
+}
+@media only screen and (max-width: 1266px) {
+
+    .butn {
+        border: 1px solid black;
+    display: block;
+    border-radius: 0px;
+    margin-left: 48px;
+    width: 119px;
+    height: 88px;
+}
+
+}

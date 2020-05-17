@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/imgs/favicons/Teller.png">
+    <link rel="stylesheet" href="../bootstrap-4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Teller.com</title>
+</head>
+
+<body>
+    <div class="spinner-border" id="s" style="width: 300px; height: 300px; margin :88px auto; display: block;"></div>
+  <div id="divcontainer" style="display: none;">
+    <div id="btnsh1" style="margin-top: 20%;">
+    <h2 id="h2">You Can Ask The Following Questions (By Clicking On The Questions) :-</h2><br>
+    <button id="btn" onclick="daytell()" class="btn btn-light butn">What Is The Day Today</button>
+    <button id="btn" onclick="datetell()" class="btn btn-light butn ml-5">What Is The Date Today</button>
+    <button id="btn" onclick="monthtell()" class="btn btn-light butn ml-5">What Is The month Today</button>
+    <button id="btn" onclick="timetell()" class="btn btn-light butn ml-5">what time Is right now</button>
+    <button id="btn" onclick="yeartell()" class="btn btn-light butn ml-5">in which year we are living</button>
+  </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="../bootstrap-4.4.1/js/bootstrap.min.js"></script>
+    <script src="./javascript/index.js"></script>
+</body>
+
+</html>
