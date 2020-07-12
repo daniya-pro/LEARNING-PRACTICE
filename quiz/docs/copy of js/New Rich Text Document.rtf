@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicons/imageedit_5_9501714777.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./semantic/Semantic-UI-CSS-master/semantic.min.css">
+
+    <title>LearnCodes Quizzes</title>
+</head>
+
+<body>
+    <!--  -->
+
+    <!-- bb -->
+    <div class="ui segment" style="
+    padding: 0 !important;
+    margin: 0 !important;
+">
+        <div class="ui active inverted dimmer" id="sppiner">
+            <div class="ui massive text loader"><i class=""></i></div>
+
+        </div>
+
+        <div id="nones1" class="mdq-574none ui image label mr-0 p-abs mt-9">
+            <img class="hei-54 usr-info" id="change-src" src="./assets/images/htmlimages/zoe.jpg">
+            <p id="change-text" class="mr-5" style="display: inline-block;"></p>
+        </div>
+
+        <div id="nones" class="bg-tr ui black deny button ui button p-abs mt-9 ml-0 mdq-574none" data-tooltip="LOGOUT" data-position="bottom left">
+            <img id="logout" class="h-72" src="./assets/images/htmlimages/imageedit_1_5835257886.png" alt="" srcset="">
+        </div>
+        <div class="everything" onload="removeloading()">
+
+            <div id="top">
+                <h1 class="quizheading">
+                    LearnCodes<strong class="quizheading strong">.com</strong>
+
+                </h1>
+                <p class="paragaphheading">THE WORLD'S LARGEST WEB DEVELOPER QUIZ SITE
+                </p>
+
+                <div class="greybackground">
+
+
+                    <span><a class="button noselect"id="button-button"> Create A Quiz </a></span>
+
+                    <span style="letter-spacing: 2px; font-size: x-large;">
+                    Thank You For Visiting Our Website.
+                </span>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- top of web end -->
+            <!-- quiz top paragraph starts now! -->
+            <div class="remove me">
+                <div id="quiz-top-paragraph">
+                    <div style="margin-left: 5px;">
+                        <br> <span class="afterheading">LearnCodes Quizzes</span>
+                        <hr style="border-top: 1px solid #eeeeee;margin-bottom: 20px ;">
+                        <div>
+                            <p class="p1st">
+                                Test your skills with LearnCodes' Quizzes.
+                            </p>
+                            <hr style="border-top: 1px solid #eeeeee;margin-top: 20px;">
+                        </div>
+
+                        <h2 style="font-size: 32px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: 400;">The Quiz</h2>
+
+
+                        <p>Each quiz contains 5 questions, you get 1 point for each correct answer, at the end of each quiz you get your total score.</p>
+                        <p>When you finish the quiz, you can go through each question with the correct answer.</p>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="quizes container">
+                    <!-- html quiz start-->
+
+                    <div class="html-container quizbox">
+                        <div class="htmlquiz quizbox">
+                            <br style="display: none;">
+                            <h2 style="color: #555;font-weight: 100!important; text-align: center;">HTML QUIZ</h2>
+                            <br>
+                            <p style="text-align: center; padding: 0px 36px;">5 Questions covering the basics of
+                                <br> HTML</p>
+                            <!-- loading -->
+                            <br>
+
+                            <div>
+                                <p style="text-align: center;"> <a class="ui inverted green button" id="html-button" onclick="func(this)">Start Quiz</a>
+                                </p>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- html ends -->
+                    <!-- css start -->
+
+                    <div class="css-container quizbox">
+                        <div class="cssquiz">
+                            <br style="display: none;">
+                            <h2 style="color: #555;font-weight: 100!important; text-align: center;">CSS QUIZ</h2>
+                            <br>
+                            <p style="text-align: center; padding: 0px 36px;">5 Questions covering the basics of <br> CSS</p>
+                            <br>
+
+                            <div>
+                                <p style="text-align: center;"> <a class="ui inverted green button" id="button-css" onclick="func(this)">Start Quiz</a>
+                                </p>
+                                <br>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- css ends -->
+                    <!-- js start -->
+
+                    <div class="js-container quizbox">
+                        <div class="jsquiz">
+                            <br style="display: none;">
+
+                            <h2 style="color: #555;font-weight: 100!important; text-align: center;">JS QUIZ</h2>
+                            <br>
+                            <p style="text-align: center; padding: 0px 36px;">5 Questions covering the basics of <br>JS</p>
+                            <br>
+
+                            <div>
+                                <p style="text-align: center;"> <a class="ui inverted green button" id="button-js" onclick="func(this)">Start Quiz</a>
+                                </p>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- js ends -->
+                    <!-- botstrap(bs) start -->
+
+                    <div class="bs-container quizbox">
+                        <div class="bsquiz">
+                            <br style="display: none;">
+                            <h2 style="color: #555;font-weight: 100!important; text-align: center;">BOOTSTRAP QUIZ</h2>
+                            <br>
+                            <p style="text-align: center; padding: 0px 36px;">5 Questions covering the basics of <br> BOOTSTRAP</p>
+                            <br>
+
+                            <div>
+                                <p style="text-align: center;"> <a class="ui inverted green button" id="button-bs" onclick="func(this)">Start Quiz</a>
+                                </p>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="ui modal modal1">
+            <div class="center-xxlarge header">
+                <div class="actions">
+                    <div id="log" class="ui deny button close top-right icon" style="background: white;">
+                        <i class="close icon" id="close-icon"></i>
+                    </div>
+                </div>
+
+                <span id="changetext"> 
+           SIGN UP
+           <span>
+        </div>
+        <hr style="visibility: hidden;">
+
+        <!-- <div class="action">
+
+            <a href="#">x</a>
+
+        </div> -->
+        <div class="content centered center">
+            <div class="file" >
+                <input type="file" name="file" id="file" style="opacity: 0;" />
+                <label for="file">
+
+                    <img class="ui circular image small centered signupOnly" id="uploadImg" src="./assets/images/htmlimages/kristy.png">
+                    <div class="HalfCircle signupOnly">
+                        <b class="fileText" id="fileText">Upload Profile</b>
+                        <i class="cloud upload icon fileText" style="font-size: 23px;"></i>
+                    </div>
+
+
+            </label>
+        </div>
+        <img id="loginonly" class="ui image small centered" src="./assets/images/htmlimages/login.png">
+
+        <div class="description">
+            <div id="change-my-text" class="ui header margin5">Please Sign Up/Login To Continue...</div>
+            <i class="user icon signupOnly" style="font-size:30px;"></i>
+            <div id="first" class="ui input corner labeled signupOnly">
+                <input type="text" id="First" class="margin5" placeholder="First Name">
+
+                <div class="ui corner label margin5">
+                    <i class="asterisk icon"></i>
+
+                </div>
+            </div>
+            <div class="ui input corner labeled signupOnly">
+
+                <input id="last" type="text" class="margin5 m-47" placeholder="Last Name">
+
+                <div class="ui corner label margin5">
+                    <i class="asterisk icon"></i>
+                </div>
+            </div>
+            <br>
+            <div class="ui input corner labeled fluid">
+                <i class="mail icon" style="font-size:30px;"></i>
+
+                <input id="mail" type="email" class="margin5" placeholder="Email">
+
+                <div class="ui corner label margin5">
+                    <i class="asterisk icon"></i>
+                </div>
+
+
+            </div>
+            <div class="ui input corner labeled fluid">
+                <i class="lock icon" style="font-size:30px;"></i>
+
+                <input type="password" class="margin5" id="un-hide" placeholder="*******">
+
+                <div class="ui corner label margin5">
+
+
+                    <i class="asterisk icon"></i>
+                    <br>
+                    <i class="eye slash icon" id="eye"></i>
+
+                </div>
+                <br>
+
+            </div>
+
+        </div>
+        <div class="">
+            <div id="Signup" class="ui black deny button signupOnly">
+                SIGN UP
+            </div>
+            <div id="Login" class="ui black deny button loginOnly">
+                LOGIN
+            </div>
+            <a href="javascript:void(0)" class="signupOnly" onclick="goToLogin()">
+                    Already&nbsp; Have&nbsp; An&nbsp; Account?
+                </a>
+            <a href="javascript:void(0)" class="loginOnly" onclick="goToSignup()">
+                    Don't&nbsp; Have&nbsp; An&nbsp; Account?
+                </a> 
+        </div>
+                 
+    </div>
+    <div id="nonone0" class="none ui divider"></div>
+    <div id="disnones" class="ui error border-radius margin-1em b1-Solid-red
+    none">
+        <div class="ui error message">
+            <div class="header">Error !</div>
+            <div id="">
+                <ol id="errors" class="ui list margin5">
+                </ol>
+
+            </div>
+        </div>
+    </div>
+    <div id="nonone" class="ui warning border-radius b1-Solid-orange margin-1em message none" >
+        <div class="header">Action Forbidden !</div>
+        <ol class="ui list margin5">
+          <li value="❌">&nbsp;You can only sign up for an account once with a given e-mail address.
+
+                </li>
+                </ul>
+            </div>
+            <div id="nonone2" class="none ui divider"></div>
+        </div>
+
+        <div class="ui modal modal2">
+            
+            <h2 class="header" style="text-align: center;">Header</h1>
+                <br>
+                <span class="f-size-h2">Question</span>
+                <span id="q-no" class="f-size-h2"></span>
+                <br>
+
+            </div>
+
+
+        </div>
+
+        <script src="./semantic/jquery-3.2.1.min.js"></script>
+        <script src="./semantic/Semantic-UI-CSS-master/semantic.js"></script>
+        <script src="./js/index.js"></script>
+
+</body>
+
+</html>
