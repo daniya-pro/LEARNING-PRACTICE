@@ -706,4 +706,10 @@ if (document.getElementById("sppiner")) {
         fo.style.display = "block"
 
     }
+
+    var modpar = document.querySelector(".ui.modal1.modal").parentNode
+    if (modpar.id === "forms") {} else {
+        modpar.className += " white"
+            // modpar.className.eplace(active)
+    }
 }
