@@ -712,4 +712,9 @@ if (document.getElementById("sppiner")) {
         modpar.className += " white"
             // modpar.className.eplace(active)
     }
+    // $('.special.modal')
+    //     .modal({
+    //         centered: false
+    //     })
+    //     .modal('show');
 }
