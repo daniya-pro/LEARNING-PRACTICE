@@ -183,7 +183,7 @@
 }
 
 .p-2rem {
-    padding: 2rem;
+    padding: 2rem !important;
 }
 
 .margin5 {
@@ -274,6 +274,9 @@
     margin-top: 5px;
 }
 
+
+/* margin-top: 5 */
+
 .ml-0 {
     margin-left: 0px !important;
 }
@@ -283,10 +286,12 @@
 }
 
 .mt-9 {
+    margin-top: 9px !important;
     top: 9px !important;
 }
 
 .mr-0 {
+    margin-right: 0 !important;
     right: 0 !important;
 }
 
@@ -416,6 +421,16 @@
     cursor: pointer;
 }
 
+.mb-30 {
+    margin-bottom: 30px !important;
+    bottom: 30px!important;
+}
+
+.mr-8 {
+    margin-right: 8px;
+    right: 8px;
+}
+
 .b-7 {
     bottom: 7px;
 }
@@ -501,6 +516,15 @@ body {
     margin-bottom: 5px;
 }
 
+.mt-0 {
+    margin-top: 0px;
+    top: 0px;
+}
+
+.ml-5 {
+    margin-left: 5px !important;
+}
+
 
 /* classes ends */
 
@@ -549,10 +573,6 @@ body {
     top: 0px;
     color: black;
     right: 2px;
-}
-
-.ml-5 {
-    margin-left: 5px !important;
 }
 
 #bull {

@@ -44,14 +44,16 @@
     <div id="h-q-n" class="none">
         <div class="ui center">
             <h1 class="f-size-37px"><b><i id="title">Heading</i></b></h1>
-            <h3 class="f-size-36px mt-50px"><b><i>No Questions</i></b></h3>
+            <h3 class="f-size-36px mt-50px"><b><i id="no-q">No Questions</i></b></h3>
         </div>
-        <button id="title-sub" class="ui button inverted-black p-abs ml-0 mb-5">SUBMIT</button>
+        <button id="title-sub" class="ui button inverted-black p-abs ml-5 mb-5">SUBMIT</button>
         <br>
-        <button id="plus1" class="ui button br-100per inverted green f-size-20 h-72 w-72 p-5px p-abs mr-5 mb-5" data-inverted="" data-tooltip="Add Questions" data-position="left center">+</button>
+        <button id="plus1" class="ui button br-100per inverted green f-size-20 h-72 w-72 p-5px p-abs mb-30 mr-8" data-inverted="" data-tooltip="Add Questions" data-position="left center">+</button>
+        <div><button class="ui button mr-5 mb-5 p-abs inverted-black margin5" onclick="backk();">Back</button></div>
+    </div>
     </div>
 
-    <div id="modalno1" class="ui noselect modal modalno1 p-rel">
+    <div id="modalno1" class="ui noselect modal modal1 p-rel">
         <i class="close icon cancel" id="close"></i>
 
         <div id="change-me">
@@ -59,21 +61,21 @@
                 <h1 class="ui center">Add Question</h1>
             </div>
 
-            <div class="ui form">
+            <div id="add-answers-inme" class="ui form">
                 <div class="field center">
                     <br>
                     <br>
                     <label>Question</label>
-                    <br><input placeholder="Question?" class="m-w-70per" type="text">
+                    <br><input id="" placeholder="Question?" class="m-w-70per q" type="text">
                 </div>
                 <br><br>
                 <div class="field center">
                     <label>Answer</label> <br>
-                    <input placeholder="yes" class="m-w-70per" type="text">
+                    <input placeholder="yes" class="ans m-w-70per" type="text">
                 </div> <br><br>
                 <div class="field center">
                     <label>Answer</label> <br>
-                    <input placeholder="no" class="m-w-70per" type="text">
+                    <input placeholder="no" class="ans m-w-70per" type="text">
                 </div>
                 <div class="h-80px"></div>
 
@@ -98,8 +100,8 @@
             <div class="ui center grid container">
                 <div class="ui two column grid">
 
-                    <div class="gainsboro column p-2rem margin5" style="margin-right: 10%!important;">Question?
-                        <div class="ml-negative-20">
+                    <div class="gainsboro column p-2rem">Question?
+                        <div class="ml-negative-20 mt-9">
                             <div class="ui check checkbox">
 
                                 <input type="checkbox" name="example">
@@ -117,22 +119,41 @@
                         </div>
                         <div class="ml-negative-20">
                             <div style="display: none;" id="radio" class="ui radio">
+                                <div class="ui form">
+                                    <div class="grouped fields">
+                                        <div class="field">
+                                            <div class="ui radio checkbox">
+                                                <input type="radio" name="example2" checked="checked">
+                                                <label>yes</label>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="ui radio checkbox">
+                                                <input type="radio" name="example2">
+                                                <label>no</label>
+                                            </div>
+                                        </div>
 
-                                <input type="radio" name="example">
-                                <label>yes</label>
-                                <br>
-                                <input type="radio" name="example">
-                                <label>no</label>
+
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
 
                     </div>
+
+                    <input type="radio">
+                    <div><button onclick="a()" class="ui button inverted-black mb-5 mt-9 margin5">SUBMIT</button></div>
                 </div>
             </div>
         </div>
     </div>
+    <div>
+
+
     </div>
+
     <script src="../semantic/jquery-3.2.1.min.js"></script>
     <script src="../semantic/Semantic-UI-CSS-master/semantic.js"></script>
     <script src="../js/index.js"></script>

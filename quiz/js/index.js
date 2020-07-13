@@ -548,10 +548,30 @@ if (document.getElementById("sppiner")) {
         drdown()
         document.getElementById("change-me").style.display = "none"
         document.getElementById("prewiewq").style.display = "block"
+        var obj = JSON.parse(localStorage.getItem("draft"))
+        var ansarr = []
+        var doca = document.querySelectorAll(".ans")
+        doca.forEach(function(a, i) {
+            ansarr.push(doca[i].value)
+
+        })
+        var docq = document.querySelectorAll(".q")
+        Object.assign(obj, {
+            question: docq[0].value,
+            ans: ansarr
+        })
+        localStorage.setItem("draft", JSON.stringify(obj))
+
+    })
+    document.getElementById("plus2").addEventListener("click", function() {
+
+
+
     })
     document.getElementById("plus1").addEventListener("click", function() {
-
-        $('.ui.modalno1').modal({
+        document.getElementById("change-me").style.display = "block"
+        document.getElementById("prewiewq").style.display = "none"
+        $('.ui.modal1').modal({
                 allowMultiple: true
             })
             .modal('setting', 'closable', false)
@@ -559,7 +579,7 @@ if (document.getElementById("sppiner")) {
 
 
 
-        var modpar = document.querySelector(".ui.modal").parentNode
+        var modpar = document.querySelector(".ui.modal1.modal").parentNode
         if (modpar.id === "forms") {} else {
             modpar.className += " white"
                 // modpar.className.eplace(active)
@@ -569,8 +589,10 @@ if (document.getElementById("sppiner")) {
 
     })
 
-    document.getElementById("close").addEventListener("click", function() {
-        $(".ui.modal").modal("hide")
+    document.getElementById("close").addEventListener("click", a)
+
+    function a() {
+        $(".ui.modal1.modal").modal("hide")
         document.getElementById('change-me').style.display = 'block';
 
 
@@ -579,14 +601,15 @@ if (document.getElementById("sppiner")) {
 
 
 
-    })
+    }
 
-
-
+    //
     quiz.addEventListener("click", function() {
         var inp1 = document.getElementById("inp1");
         var t_a = document.getElementById("t-a");
         var r_m = document.getElementById("red-error");
+        var te = document.getElementById("title");
+        var nq = document.getElementById("no-q");
         var add = document.getElementById("add");
         var ib;
         var t_ab;
@@ -640,10 +663,14 @@ if (document.getElementById("sppiner")) {
             })
 
         }
+
         if (ib === true && t_ab === true) {
+            var obj = { description: t_a.value, title: inp1.value }
+            localStorage.setItem("draft", JSON.stringify(obj))
             r_m.style.display = "none"
             document.getElementById("h-q-n").style.display = "block"
             fo.style.display = "none"
+            localStorage.getItem("draft") ? te.innerHTML = JSON.parse(localStorage.getItem("draft")) : console.error(SyntaxError("An Error Ocurred"))
 
 
         }
@@ -672,5 +699,11 @@ if (document.getElementById("sppiner")) {
 
     $('.ui.dropdown')
         .dropdown();
-    var model = document.querySelector(".ui.modal")
+
+    function backk() {
+        var fo = document.getElementById('forms')
+        document.getElementById("h-q-n").style.display = "none"
+        fo.style.display = "block"
+
+    }
 }
