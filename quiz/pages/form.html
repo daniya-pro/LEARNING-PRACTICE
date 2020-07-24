@@ -133,8 +133,6 @@
                                                 <label>no</label>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -143,16 +141,27 @@
 
                     </div>
 
-                    <input type="radio">
-                    <div><button onclick="a()" class="ui button inverted-black mb-5 mt-9 margin5">SUBMIT</button></div>
+                    <!--  -->
+                    <div><button onclick="a( $('.ui.modal1.modal'))" class="ui button inverted-black mb-5 mt-9 margin5">SUBMIT</button></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="ui special modal">
+    <div class="ui special modal b-radi-0 top0m0impo p-28-0-28 bg-red transition">
+        <div class="center colorwhite">
+            <span class="">❌</span> You Have To Add A Question
+            <i class="close icon c-white hover-c-red" onclick="a($('.ui.special.modal'))"></i>
 
-
+        </div>
     </div>
+    <!-- 
+    <div class="ui special modal p-abs">
+
+        <div class="ui red message">
+
+            <span class="">❌</span> You Have To Add A Question</div>
+
+    </div> -->
 
     <script src="../semantic/jquery-3.2.1.min.js"></script>
     <script src="../semantic/Semantic-UI-CSS-master/semantic.js"></script>

@@ -219,14 +219,13 @@ if (document.getElementById("sppiner")) {
 
 
         if (fnamval.length <= 2) {
-
             dinone.style.display = "block"
             fnamval.length === 0 ? err.innerHTML += `<li class="a" id="a" value="❌">&nbsp;please fill the first feild</li>` : err.innerHTML += `<li class="a" id="a" value="❌">&nbsp; please write atleast 3 letter in first field</li>`
             fnamval.length === 0 ? console.log("true lengh is 0") : console.log("false lengh is not 0")
             fnameb = false
         } else {
             console.log("value of input of first name is correct")
-
+            fnameb = true
             var ida = document.getElementsByTagName("li")
             var realaray = Array.from(ida)
 
@@ -255,10 +254,10 @@ if (document.getElementById("sppiner")) {
             })
 
         }
-        if (lnameval.length <= 2) {
+        if (lnameval.length < 3) {
             lnamb = false
             dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
-            lnameval.length === 0 ? err.innerHTML += `<li class="b" id="b" value="❌">&nbsp;please fill the second feild</li>` : err.innerHTML += `<li class="b" id="b" value="❌">&nbsp; please write atleast 3 letter in second field</li>`
+            lnameval.length === 0 ? err.innerHTML += `<li class="b" id="b" value="❌">&nbsp;please fill the second feild</li>` : err.innerHTML += `<li class="b" id="b" value="❌">&nbsp; please write atleast 2 letter in second field</li>`
 
         } else {
             lnamb = true
@@ -527,13 +526,13 @@ if (document.getElementById("sppiner")) {
         if (ddl.value.toLowerCase() === "multiple") {
             document.getElementById("radio").style.display = "none"
             var abcde = document.querySelectorAll(".check")
-            abcde.forEach(function(a, i) { abcde[i].style.display = "inline-block" })
+            abcde.forEach(function(el, i) { abcde[i].style.display = "inline-block" })
         }
         if (ddl.value.toLowerCase() === "single") {
 
 
             var abcde = document.querySelectorAll(".check")
-            abcde.forEach(function(a, i) { abcde[i].style.display = "none" })
+            abcde.forEach(function(el, i) { abcde[i].style.display = "none" })
             document.getElementById("radio").style.display = "inline-block"
 
         }
@@ -549,16 +548,21 @@ if (document.getElementById("sppiner")) {
         document.getElementById("change-me").style.display = "none"
         document.getElementById("prewiewq").style.display = "block"
         var obj = JSON.parse(localStorage.getItem("draft"))
-        var ansarr = []
+        var answer = []
         var doca = document.querySelectorAll(".ans")
-        doca.forEach(function(a, i) {
-            ansarr.push(doca[i].value)
+        var qu = [];
+        doca.forEach(function(el, i) {
+            answer.push(doca[i].value)
 
         })
-        var docq = document.querySelectorAll(".q")
+        var docq = document.querySelectorAll(".q");
+
+        docq.forEach(function(el, i) {
+            qu.push(docq[i].value)
+        })
         Object.assign(obj, {
-            question: docq[0].value,
-            ans: ansarr
+            question: qu,
+            ans: answer
         })
         localStorage.setItem("draft", JSON.stringify(obj))
 
@@ -589,10 +593,9 @@ if (document.getElementById("sppiner")) {
 
     })
 
-    document.getElementById("close").addEventListener("click", a)
 
-    function a() {
-        $(".ui.modal1.modal").modal("hide")
+    function a(el) {
+        el.modal("hide")
         document.getElementById('change-me').style.display = 'block';
 
 
@@ -603,7 +606,8 @@ if (document.getElementById("sppiner")) {
 
     }
 
-    //
+    var aa = document.getElementById("title-sub")
+    aa.addEventListener("click", errormodel)
     quiz.addEventListener("click", function() {
         var inp1 = document.getElementById("inp1");
         var t_a = document.getElementById("t-a");
@@ -668,9 +672,10 @@ if (document.getElementById("sppiner")) {
             var obj = { description: t_a.value, title: inp1.value }
             localStorage.setItem("draft", JSON.stringify(obj))
             r_m.style.display = "none"
+                // setTimeout(errormodel, 100)
             document.getElementById("h-q-n").style.display = "block"
             fo.style.display = "none"
-            localStorage.getItem("draft") ? te.innerHTML = JSON.parse(localStorage.getItem("draft")) : console.error(SyntaxError("An Error Ocurred"))
+            localStorage.getItem("draft") ? te.innerHTML = JSON.parse(localStorage.getItem("draft")).title : console.error(SyntaxError("An Error Ocurred"))
 
 
         }
@@ -707,14 +712,29 @@ if (document.getElementById("sppiner")) {
 
     }
 
-    var modpar = document.querySelector(".ui.modal1.modal").parentNode
-    if (modpar.id === "forms") {} else {
-        modpar.className += " white"
-            // modpar.className.eplace(active)
+    function errormodel() {
+        var nq = document.getElementById("no-q")
+        if (JSON.parse(localStorage.getItem("draft")).question === false) {
+            nq.innerText = `No Question`
+            $('.special.modal')
+                .modal({
+                    centered: false
+
+                }).modal('setting', 'closable', false)
+
+            .modal('show');
+            var modelparent = document.querySelector(".ui.special.modal").parentNode
+            var model = document.querySelector(".ui.special.modal")
+            if (modelparent.tagName.toLowerCase() === "body") {} else {
+                model.style.width = "-webkit-fill-available"
+
+                modelparent.className += " bg-tr p-abs"
+                modelparent.style.top = "0px"
+                modelparent.style.display = "flex"
+                modelparent.setAttribute("style", "top: 0px !important; display:flex;")
+                    // modpar.className.eplace(active)
+            }
+        }
+
     }
-    // $('.special.modal')
-    //     .modal({
-    //         centered: false
-    //     })
-    //     .modal('show');
 }

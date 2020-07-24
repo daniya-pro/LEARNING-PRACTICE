@@ -1,5 +1,3 @@
-/* keyframes starts here*/
-
 @keyframes HideSlow {
     from {
         bottom: 0px;
@@ -21,12 +19,6 @@
         bottom: 0px;
     }
 }
-
-
-/* keyframe ends here */
-
-
-/* classes starts */
 
 .mt-50px {
     margin-top: 50px;
@@ -138,6 +130,14 @@
 
 .h-80px {
     height: 80px;
+}
+
+.top-negative-10-point-9 {
+    top: -10.9px !important;
+}
+
+.top-negative-28-point-9 {
+    top: -28.9px !important;
 }
 
 .f-size-62px {
@@ -252,6 +252,15 @@
     color: black!important;
 }
 
+.top0m0impo {
+    top: 0 !important;
+    margin: 0 !important;
+}
+
+.p-28-0-28 {
+    padding: 28px 0 28px;
+}
+
 .boxshadow-black {
     box-shadow: 0 0 0 2px black inset!important;
 }
@@ -266,6 +275,10 @@
     color: red;
 }
 
+.bg-red {
+    background-color: red !important;
+}
+
 #change-text {
     display: inline-block;
     font-family: monospace;
@@ -273,9 +286,6 @@
     font-size: x-large;
     margin-top: 5px;
 }
-
-
-/* margin-top: 5 */
 
 .ml-0 {
     margin-left: 0px !important;
@@ -308,11 +318,19 @@
 
 .center-xxlarge {
     font-size: xx-large!important;
-    text-align: center;
+    text-align: center !important;
 }
 
 .none {
     display: none;
+}
+
+.b-radi-0 {
+    border-radius: 0px !important;
+}
+
+.c-white {
+    color: white !important;
 }
 
 .none-imp {
@@ -336,8 +354,8 @@
     top: 8px;
     right: 5px;
     transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 30px !important;
+    font-weight: bold !important;
     text-decoration: none;
     color: #333;
 }
@@ -525,12 +543,6 @@ body {
     margin-left: 5px !important;
 }
 
-
-/* classes ends */
-
-
-/* ids starts */
-
 #p2 {
     display: none;
 }
@@ -611,7 +623,7 @@ body {
 }
 
 .mt-13 {
-    margin-top: 13px;
+    margin-top: 13px !important;
 }
 
 .text-align-end {
@@ -627,6 +639,10 @@ body {
 .inverted-black:hover {
     background-color: black!important;
     color: white !important;
+}
+
+.colorwhite {
+    color: white;
 }
 
 .white {
@@ -658,15 +674,13 @@ body {
     cursor: pointer;
 }
 
-
-/* ids ends */
-
-
-/* hover starts */
-
 #close-icon:hover,
 .close:hover {
     color: #9e9e9e !important;
+}
+
+.hover-c-red:hover {
+    color: darkred !important;
 }
 
 #login:hover {
@@ -683,12 +697,6 @@ body {
     color: white !important;
     border-radius: 37px 0px 0px 37px;
 }
-
-
-/* hove ends */
-
-
-/* elements starts */
 
 input[type="radio"] {
     margin: 5px;
@@ -730,12 +738,6 @@ select {
     background-color: #ffffff;
     border: 1px solid #cccccc;
 }
-
-
-/* elements ends */
-
-
-/* media query starta */
 
 @media only screen and (max-width: 1268px) {
     .quizbox {
@@ -789,12 +791,6 @@ select {
     }
 }
 
-
-/* media qury ends */
-
-
-/* font faces starts */
-
 @font-face {
     font-family: allhead;
     src: url(../assets/fonts/Varsity.ttf);
@@ -814,6 +810,3 @@ select {
     font-family: b;
     src: url(../assets/fonts/zollern.ttf);
 }
-
-
-/* font faces ends  */
