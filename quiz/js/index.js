@@ -521,6 +521,11 @@ if (document.getElementById("sppiner")) {
     var myGlobalVar;
     var ddl = document.getElementById("drop");
 
+    function singmul() {
+        var doca = document.querySelectorAll(".ans")
+
+    }
+
     function drdown() {
 
         if (ddl.value.toLowerCase() === "multiple") {
@@ -559,12 +564,14 @@ if (document.getElementById("sppiner")) {
 
         docq.forEach(function(el, i) {
             qu.push(docq[i].value)
-        })
-        Object.assign(obj, {
-            question: qu,
-            ans: answer
+
+            Object.assign(obj, {
+                question: docq[i],
+                ans: answer
+            })
         })
         localStorage.setItem("draft", JSON.stringify(obj))
+        localStorage.setItem("que", JSON.stringify(qu[qu.length - 1]))
 
     })
     document.getElementById("plus2").addEventListener("click", function() {
@@ -714,7 +721,8 @@ if (document.getElementById("sppiner")) {
 
     function errormodel() {
         var nq = document.getElementById("no-q")
-        if (JSON.parse(localStorage.getItem("draft")).question === false) {
+
+        if (JSON.parse(localStorage.getItem("draft")).question === undefined) {
             nq.innerText = `No Question`
             $('.special.modal')
                 .modal({
@@ -734,6 +742,10 @@ if (document.getElementById("sppiner")) {
                 modelparent.setAttribute("style", "top: 0px !important; display:flex;")
                     // modpar.className.eplace(active)
             }
+        } else {
+
+            var dr = JSON.parse(localStorage.getItem("draft"))
+
         }
 
     }
