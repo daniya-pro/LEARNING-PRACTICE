@@ -523,11 +523,17 @@ if (document.getElementById("sppiner")) {
 
     function singmul() {
         var doca = document.querySelectorAll(".ans")
-
+        if (doca.length === 2) {}
     }
 
     function drdown() {
+        var ansss = document.querySelectorAll(".ans")
+        if (ansss.length <= 2) {
+            console.log("s")
+            ddl.value = "Single"
+            ddl.style.display = "none"
 
+        } else { ddl.style.display = "block" }
         if (ddl.value.toLowerCase() === "multiple") {
             document.getElementById("radio").style.display = "none"
             var abcde = document.querySelectorAll(".check")
@@ -541,7 +547,6 @@ if (document.getElementById("sppiner")) {
             document.getElementById("radio").style.display = "inline-block"
 
         }
-
     }
     ddl.addEventListener("change", drdown)
     var p;
@@ -560,22 +565,23 @@ if (document.getElementById("sppiner")) {
             answer.push(doca[i].value)
 
         })
+
         var docq = document.querySelectorAll(".q");
+        var iq = document.getElementById("q")
 
         docq.forEach(function(el, i) {
-            qu.push(docq[i].value)
+
 
             Object.assign(obj, {
-                question: docq[i],
+                question: iq.value,
                 ans: answer
             })
         })
         localStorage.setItem("draft", JSON.stringify(obj))
-        localStorage.setItem("que", JSON.stringify(qu[qu.length - 1]))
+
 
     })
     document.getElementById("plus2").addEventListener("click", function() {
-
 
 
     })
@@ -613,6 +619,12 @@ if (document.getElementById("sppiner")) {
 
     }
 
+    function hidenoq() {
+
+        a($('.ui.modal1.modal'));
+        noqtoq("hq")
+
+    }
     var aa = document.getElementById("title-sub")
     aa.addEventListener("click", errormodel)
     quiz.addEventListener("click", function() {
@@ -674,10 +686,22 @@ if (document.getElementById("sppiner")) {
             })
 
         }
+        // 
 
         if (ib === true && t_ab === true) {
-            var obj = { description: t_a.value, title: inp1.value }
-            localStorage.setItem("draft", JSON.stringify(obj))
+
+            if (JSON.parse(localStorage.getItem("draft")).question) {
+                var obj = localStorage.getItem("draft")
+                noqtoq("the ib --true tab true")
+
+
+            } else {
+
+                var obj = { description: t_a.value, title: inp1.value }
+                localStorage.setItem("draft", JSON.stringify(obj))
+
+            }
+
             r_m.style.display = "none"
                 // setTimeout(errormodel, 100)
             document.getElementById("h-q-n").style.display = "block"
@@ -709,6 +733,24 @@ if (document.getElementById("sppiner")) {
         }
     })
 
+    function noqtoq(cons) {
+        var nq = document.getElementById("no-q")
+        var dr = JSON.parse(localStorage.getItem("draft"))
+        console.log(cons)
+        if (dr.question) {
+            if (nq.innerText.toLowerCase() === "no questions") {
+
+                nq.innerHTML = `${dr.question} <br>`
+
+            } else {
+
+                nq.innerHTML += `${dr.question} <br>`
+            }
+        } else {
+            nq.innerText = `No Questions`
+        }
+    }
+
     $('.ui.dropdown')
         .dropdown();
 
@@ -723,7 +765,7 @@ if (document.getElementById("sppiner")) {
         var nq = document.getElementById("no-q")
 
         if (JSON.parse(localStorage.getItem("draft")).question === undefined) {
-            nq.innerText = `No Question`
+
             $('.special.modal')
                 .modal({
                     centered: false
@@ -744,7 +786,7 @@ if (document.getElementById("sppiner")) {
             }
         } else {
 
-            var dr = JSON.parse(localStorage.getItem("draft"))
+
 
         }
 
