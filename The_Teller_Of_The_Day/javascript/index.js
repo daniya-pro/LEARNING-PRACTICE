@@ -11,7 +11,7 @@ var H2 = document.getElementById("h2")
 function daytell() {
     var days_array = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     var newday = new Date().getDay()
-    var TheResultDay = days_array[newday]
+    var TheResultDay = days_array[newday - 1]
     H2.innerHTML = "Today The Day Is = " + TheResultDay
 }
 

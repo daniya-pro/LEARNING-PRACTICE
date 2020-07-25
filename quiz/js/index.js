@@ -412,11 +412,13 @@ if (document.getElementById("sppiner")) {
         //variables end
         //validation
         var vamail;
-        var ok = JSON.parse(localStorage.getItem("signup"))
-        ok.forEach(function(a, i) {
-            vamail = ok[i].Email.toLowerCase().trim() === emailval.toLowerCase().trim() ? ok[i].Email : ""
+        if (localStorage.getItem("signup")) {
+            var ok = JSON.parse(localStorage.getItem("signup"))
+            ok.forEach(function(a, i) {
+                vamail = ok[i].Email.toLowerCase().trim() === emailval.toLowerCase().trim() ? ok[i].Email : ""
 
-        })
+            })
+        }
         var vapass;
         ok.forEach(function(a, i) {
                 vapass = ok[i].Password.toLowerCase().trim() === passval.toLowerCase().trim() ? ok[i].Password : ""
