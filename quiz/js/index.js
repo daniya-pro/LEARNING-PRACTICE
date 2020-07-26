@@ -15,6 +15,7 @@ if (document.getElementById("sppiner")) {
     function removeloading() {
         var sppiner = document.getElementById("sppiner");
         sppiner.style.display = "none"
+        sppiner.setAttribute("style", "display:none;")
     }
     setTimeout(removeloading, 700);
 
@@ -34,7 +35,7 @@ if (document.getElementById("sppiner")) {
 
             var array = JSON.parse(localStorage.getItem("user"))
 
-            document.getElementById("change-text").innerText = array[0].Fname + " " + array[0].Lname
+            document.getElementById("change-text").innerText = array[0] ? array[0].Fname + " " + array[0].Lname : array.Fname + " " + array.Lname
             document.getElementById("nones").style.display = "inline-block";
             document.getElementById("nones1").style.display = "inline-block";
             document.getElementById("change-src").src = document.getElementById("uploadImg").src
@@ -124,7 +125,6 @@ if (document.getElementById("sppiner")) {
             //an element will be visible with id loginonly
         document.getElementById("loginonly").setAttribute("style", "display:block !important")
     }
-
 
     function goToSignup() {
         document.getElementById("disnones").style.display = "none"
@@ -224,14 +224,14 @@ if (document.getElementById("sppiner")) {
             fnamval.length === 0 ? console.log("true lengh is 0") : console.log("false lengh is not 0")
             fnameb = false
         } else {
-            console.log("value of input of first name is correct")
             fnameb = true
+            console.log("value of input of first name is correct" + fnameb)
+
             var ida = document.getElementsByTagName("li")
             var realaray = Array.from(ida)
 
 
             if (localStorage.getItem("signup")) {
-
                 var k = JSON.parse(localStorage.getItem("signup"))
                 k.forEach(function(a, i) {
                     dinone.style.display !== "block" ? dinone.style.display = "block" : console.log("its display block aleady")
@@ -243,6 +243,12 @@ if (document.getElementById("sppiner")) {
 
 
                 })
+            } else {
+
+
+                fnameb = true
+
+
             }
 
             realaray.forEach(function(abc, i) {
@@ -260,8 +266,9 @@ if (document.getElementById("sppiner")) {
             lnameval.length === 0 ? err.innerHTML += `<li class="b" id="b" value="❌">&nbsp;please fill the second feild</li>` : err.innerHTML += `<li class="b" id="b" value="❌">&nbsp; please write atleast 2 letter in second field</li>`
 
         } else {
-            lnamb = true
 
+            lnamb = true
+            console.log("lna", lnamb)
             var idb = document.getElementsByTagName("li")
 
             var realaray = Array.from(idb)
@@ -281,11 +288,12 @@ if (document.getElementById("sppiner")) {
             emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please fill the third feild</li>` : err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please write a correct email in third field</li>`
 
         } else {
+
             if (localStorage.getItem("signup")) {
 
                 var k = JSON.parse(localStorage.getItem("signup"))
                 k.forEach(function(a, i) {
-
+                    console.log("flag mail ==>", mailb)
                     var non = document.getElementById("nonone")
                     var non2 = document.getElementById("nonone2")
                     k[i].Email.toLowerCase() === emailval.toLowerCase() ? non.style.display = "block" : console.log("all is right");
@@ -293,10 +301,18 @@ if (document.getElementById("sppiner")) {
 
                     k[i].Email.toLowerCase() === emailval.toLowerCase() ? mailb = false : mailb = true
 
-                    console.log("flag fnameb ==>", lnamb)
 
                 })
+            } else {
+                mailb = true
+                console.log("mail " + mailb)
+
+
+
+
             }
+
+
             var idc = document.getElementsByTagName("li")
 
             var realaray = Array.from(idc)
@@ -318,7 +334,9 @@ if (document.getElementById("sppiner")) {
             dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
 
         } else {
+
             pasb = true
+            console.log("pass:" + pasb)
 
             var idd = document.getElementsByTagName("li")
 
@@ -347,7 +365,6 @@ if (document.getElementById("sppiner")) {
 
             for (var i = 0; i < b.length; i++) {
                 b[i].remove()
-
             }
 
         }
@@ -375,6 +392,7 @@ if (document.getElementById("sppiner")) {
             var only1user = JSON.stringify({ Fname: fnamval, Lname: lnameval, Email: emailval, Password: passval })
             localStorage.setItem("user", only1user)
             dinone.style.display = "none"
+
             window.location.reload()
 
         }
@@ -412,19 +430,21 @@ if (document.getElementById("sppiner")) {
         //variables end
         //validation
         var vamail;
+        var vapass;
         if (localStorage.getItem("signup")) {
             var ok = JSON.parse(localStorage.getItem("signup"))
             ok.forEach(function(a, i) {
                 vamail = ok[i].Email.toLowerCase().trim() === emailval.toLowerCase().trim() ? ok[i].Email : ""
 
             })
-        }
-        var vapass;
-        ok.forEach(function(a, i) {
+
+
+            ok.forEach(function(a, i) {
                 vapass = ok[i].Password.toLowerCase().trim() === passval.toLowerCase().trim() ? ok[i].Password : ""
 
             })
-            //for laterz
+        }
+        //for laterz
         if (vamail !== emailval) {
             mailb = false
             dinone.style.display === "block" ? console.log("its display block already in mail") : dinone.style.display = "block"
@@ -519,6 +539,8 @@ if (document.getElementById("sppiner")) {
     document.getElementById("logout").addEventListener("click", logout);
     EyeEl.addEventListener("mouseout", eye_slash);
     EyeEl.addEventListener("mouseover", eye);
+
+
 } else {
     var myGlobalVar;
     var ddl = document.getElementById("drop");
@@ -588,6 +610,13 @@ if (document.getElementById("sppiner")) {
 
     })
     document.getElementById("plus1").addEventListener("click", function() {
+        var a = document.querySelectorAll(".ans")
+        a.forEach(function(el, i) {
+
+                a[i].value = ""
+
+            })
+            // document.querySelectorAll("")
         document.getElementById("change-me").style.display = "block"
         document.getElementById("prewiewq").style.display = "none"
         $('.ui.modal1').modal({
@@ -688,19 +717,23 @@ if (document.getElementById("sppiner")) {
             })
 
         }
-        // 
+
 
         if (ib === true && t_ab === true) {
+            var obje = { description: t_a.value, title: inp1.value }
 
-            if (JSON.parse(localStorage.getItem("draft")).question) {
-                var obj = localStorage.getItem("draft")
+            if (JSON.parse(localStorage.getItem("draft")) && JSON.parse(localStorage.getItem("draft")).question) {
+                var obj = JSON.parse(localStorage.getItem("draft"))
+                obj.title = obje.title
+                obj.description = obje.description
+
+                localStorage.setItem("draft", JSON.stringify(obj))
                 noqtoq("the ib --true tab true")
 
 
             } else {
 
-                var obj = { description: t_a.value, title: inp1.value }
-                localStorage.setItem("draft", JSON.stringify(obj))
+                localStorage.setItem("draft", JSON.stringify(obje))
 
             }
 
@@ -739,7 +772,7 @@ if (document.getElementById("sppiner")) {
         var nq = document.getElementById("no-q")
         var dr = JSON.parse(localStorage.getItem("draft"))
         console.log(cons)
-        if (dr.question) {
+        if (dr && dr.question) {
             if (nq.innerText.toLowerCase() === "no questions") {
 
                 nq.innerHTML = `${dr.question} <br>`
@@ -749,7 +782,7 @@ if (document.getElementById("sppiner")) {
                 nq.innerHTML += `${dr.question} <br>`
             }
         } else {
-            nq.innerText = `No Questions`
+            nq.toLowerCase() !== "no questions" ? "" : nq.innerHTML = "No Questions "
         }
     }
 
