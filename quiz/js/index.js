@@ -606,7 +606,11 @@ if (document.getElementById("sppiner")) {
 
     })
     document.getElementById("plus2").addEventListener("click", function() {
-
+        document.getElementById("add-answers-inme").innerHTML = `    <br><br>
+<div class="field center">
+    <label>Answer</label> <br>
+    <input placeholder="yes" class="ans m-w-70per" type="text">
+</div>`
 
     })
     document.getElementById("plus1").addEventListener("click", function() {
