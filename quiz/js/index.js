@@ -606,10 +606,12 @@ if (document.getElementById("sppiner")) {
 
     })
     document.getElementById("plus2").addEventListener("click", function() {
-        document.getElementById("add-answers-inme").innerHTML = `    <br><br>
+        document.getElementById("add-answers-inme").innerHTML += `<br><br>
 <div class="field center">
     <label>Answer</label> <br>
     <input placeholder="yes" class="ans m-w-70per" type="text">
+    <span class="ui button inverted-black">Remove/Delete</span>
+
 </div>`
 
     })
@@ -654,10 +656,10 @@ if (document.getElementById("sppiner")) {
 
     }
 
-    function hidenoq() {
+    function hidenoq(modaltohide, textToDisplayInConsole) {
 
-        a($('.ui.modal1.modal'));
-        noqtoq("hq")
+        a(modaltohide);
+        noqtoq(textToDisplayInConsole)
 
     }
     var aa = document.getElementById("title-sub")
@@ -830,4 +832,16 @@ if (document.getElementById("sppiner")) {
         }
 
     }
+
+    function addClassToAnElementByID(id_, class_) {
+
+        document.getElementById(id_).className = class_;
+
+    }
+    addClassToAnElementByID("chose-h", "h-80px")
+
+    function delete_parentNode(t) {
+        console.log(t, t.id)
+    }
+
 }

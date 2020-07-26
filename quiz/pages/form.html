@@ -72,14 +72,16 @@
                 <div class="field center">
                     <label>Answer</label> <br>
                     <input placeholder="yes" class="ans m-w-70per" type="text">
+                    <span class="ui button inverted-black">Remove/Delete</span>
                 </div> <br><br>
                 <div class="field center">
                     <label>Answer</label> <br>
                     <input placeholder="no" class="ans m-w-70per" type="text">
+                    <span class="ui button inverted-black" onclick="delete_parentNode(this)">Remove/Delete</span>
                 </div>
-                <div class="h-80px"></div>
 
             </div>
+            <div id="chose-h"></div>
 
             <!-- <div class="visi-hidden">i am hidden</div> -->
             <button id="plus2" class="ui button b-7 br-100per inverted green f-size-20 h-72 w-72 p-5px p-abs mr-5" data-inverted="" data-tooltip="Add Answers" data-position="left center">+</button>
@@ -142,7 +144,7 @@
                     </div>
 
                     <!--  -->
-                    <div><button onclick="hidenoq()" class="ui button inverted-black mb-5 mt-9 margin5">SUBMIT</button></div>
+                    <div><button onclick="hidenoq($('.ui.modal1.modal'),'i am using hidenoq')" class="ui button inverted-black mb-5 mt-9 margin5">SUBMIT</button></div>
                 </div>
             </div>
         </div>
