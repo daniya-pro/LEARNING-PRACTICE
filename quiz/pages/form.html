@@ -5,10 +5,16 @@
     <link rel="stylesheet" href="../semantic/Semantic-UI-CSS-master/semantic.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicons/imageedit_5_9501714777.png" type="image/x-icon">
-
+    <style>
+        input,
+        textarea {
+            font-size: large !important;
+        }
+    </style>
 </head>
 
 <body>
+
     <div id="forms" class="ui ml-16-perc form">
         <div class="twelve wide field">
             <div style="text-align: center;">
@@ -20,12 +26,15 @@
                             <br><br><span>Description</span><br>
                             <br>
                             <textarea id="t-a" style="height: 112px;" placeholder="my name is___ (your name). my quiz have __ (number)questions. My quiz is about ___(what your quiz is about)"></textarea>
+                            <br>
                         </div>
                     </div>
 
 
-                    <br>
-                    <div class="center"> <button id="addquiz-next" class="ui f-size-large w-181 button inverted-black">Next</button></div>
+
+                    <div class="center">
+                        <button id="addquiz-next" class="ui f-size-large w-181 button inverted-black">Next</button>
+                    </div>
                     <div id="red-error" class="ui none p-3per talign-left red message">
                         <div id="adds-parents">
                             <div id="add" class="ui list">
@@ -50,37 +59,41 @@
         <br>
         <button id="plus1" class="ui button br-100per inverted green f-size-20 h-72 w-72 p-5px p-abs mb-30 mr-8" data-inverted="" data-tooltip="Add Questions" data-position="left center">+</button>
         <div><button class="ui button mr-5 mb-5 p-abs inverted-black margin5" onclick="backk();">Back</button></div>
-    </div>`
+    </div>
     </div>
 
-    <div id="modalno1" class="ui noselect modal modal1 p-rel">
+    <div id="modalno1" class="ui noselect modal scrolling modal1 p-rel">
         <i class="close icon cancel" id="close"></i>
 
         <div id="change-me">
             <div class="ui boxshadow-none p-1em-1em b-bo-1sgainsboro">
                 <h1 class="ui center">Add Question</h1>
             </div>
-
-            <div id="add-answers-inme" class="ui form">
+            <div class="ui form">
                 <div class="field center">
                     <br>
                     <br>
                     <label>Question</label>
-                    <br><input id="q" placeholder="Question?" class="m-w-70per q" type="text">
+                    <br><input id="q" placeholder="Question?" class="m-w-80per q" type="text">
+                    <span class="ui button inverted-black none-imp" onclick="delete_parentNode(this)">Remove/Delete</span>
+                    <br>
                 </div>
-                <br><br>
-                <div class="field center">
-                    <label>Answer</label> <br>
-                    <input placeholder="yes" class="ans m-w-70per" type="text">
-                    <span class="ui button inverted-black">Remove/Delete</span>
-                </div> <br><br>
-                <div class="field center">
-                    <label>Answer</label> <br>
-                    <input placeholder="no" class="ans m-w-70per" type="text">
-                    <span class="ui button inverted-black" onclick="delete_parentNode(this)">Remove/Delete</span>
-                </div>
+                <div id="add-answers-inme">
 
+
+                    <div class="field center">
+                        <label>Answer</label> <br>
+                        <input placeholder="yes" class="ans m-w-70per" type="text">
+                        <span class="ui button inverted-black" onclick="delete_parentNode(this)">Remove/Delete</span><br><br>
+                    </div>
+                    <div class="field center">
+                        <label>Answer</label> <br>
+                        <input placeholder="no" class="ans m-w-70per" type="text">
+                        <span class="ui button inverted-black" onclick="delete_parentNode(this)">Remove/Delete</span> <br><br>
+                    </div>
+                </div>
             </div>
+
             <div id="chose-h"></div>
 
             <!-- <div class="visi-hidden">i am hidden</div> -->

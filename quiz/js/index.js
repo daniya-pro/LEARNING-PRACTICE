@@ -218,9 +218,9 @@ if (document.getElementById("sppiner")) {
         //validation start here
 
 
-        if (fnamval.length <= 2) {
+        if (fnamval.length <= 0) {
             dinone.style.display = "block"
-            fnamval.length === 0 ? err.innerHTML += `<li class="a" id="a" value="❌">&nbsp;please fill the first feild</li>` : err.innerHTML += `<li class="a" id="a" value="❌">&nbsp; please write atleast 3 letter in first field</li>`
+            err.innerHTML += `<li class="a" id="a" value="❌">&nbsp;please fill the first feild</li>`
             fnamval.length === 0 ? console.log("true lengh is 0") : console.log("false lengh is not 0")
             fnameb = false
         } else {
@@ -260,10 +260,10 @@ if (document.getElementById("sppiner")) {
             })
 
         }
-        if (lnameval.length < 3) {
+        if (lnameval.length === 0) {
             lnamb = false
             dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
-            lnameval.length === 0 ? err.innerHTML += `<li class="b" id="b" value="❌">&nbsp;please fill the second feild</li>` : err.innerHTML += `<li class="b" id="b" value="❌">&nbsp; please write atleast 2 letter in second field</li>`
+            err.innerHTML += `<li class="b" id="b" value="❌">&nbsp;please fill the second feild</li>`
 
         } else {
 
@@ -390,6 +390,10 @@ if (document.getElementById("sppiner")) {
 
         if (fnameb === true && lnamb === true && mailb === true && pasb === true) {
             var only1user = JSON.stringify({ Fname: fnamval, Lname: lnameval, Email: emailval, Password: passval })
+            var signupitem = localStorage.getItem("signup") ? localStorage.getItem("signup") : []
+            signupitem.push(only1user)
+            localStorage.setItem("signup", signupitem)
+
             localStorage.setItem("user", only1user)
             dinone.style.display = "none"
 
@@ -434,13 +438,13 @@ if (document.getElementById("sppiner")) {
         if (localStorage.getItem("signup")) {
             var ok = JSON.parse(localStorage.getItem("signup"))
             ok.forEach(function(a, i) {
-                vamail = ok[i].Email.toLowerCase().trim() === emailval.toLowerCase().trim() ? ok[i].Email : ""
+                vamail = ok[i].Email.toLowerCase().trim() === emailval.toLowerCase().trim() ? emailval : ""
 
             })
 
 
             ok.forEach(function(a, i) {
-                vapass = ok[i].Password.toLowerCase().trim() === passval.toLowerCase().trim() ? ok[i].Password : ""
+                vapass = ok[i].Password.toLowerCase().trim() === passval.toLowerCase().trim() ? vapass : ""
 
             })
         }
@@ -553,9 +557,8 @@ if (document.getElementById("sppiner")) {
     function drdown() {
         var ansss = document.querySelectorAll(".ans")
         if (ansss.length <= 2) {
-            console.log("s")
             ddl.value = "Single"
-            ddl.style.display = "none"
+            ddl.parentNode.style.display = "none"
 
         } else { ddl.style.display = "block" }
         if (ddl.value.toLowerCase() === "multiple") {
@@ -605,24 +608,43 @@ if (document.getElementById("sppiner")) {
 
 
     })
-    document.getElementById("plus2").addEventListener("click", function() {
-        document.getElementById("add-answers-inme").innerHTML += `<br><br>
-<div class="field center">
+    document.getElementById("plus2").addEventListener("click", addanswer)
+
+    function addanswer() {
+        var addingans = document.getElementById("add-answers-inme")
+
+        var MyNewDiv = document.createElement("DIV");
+
+        MyNewDiv.className === '' ? MyNewDiv.className = "field center" : MyNewDiv.className = " field center"
+
+        MyNewDiv.innerHTML += `
     <label>Answer</label> <br>
     <input placeholder="yes" class="ans m-w-70per" type="text">
-    <span class="ui button inverted-black">Remove/Delete</span>
+    <span class="ui button inverted-black" onclick="delete_parentNode(this)">Remove/Delete</span>
+<br><br>
+`
+        addingans.appendChild(MyNewDiv)
+    }
+    document.getElementById("plus1").addEventListener("click", namless)
 
-</div>`
+    function namless() {
 
-    })
-    document.getElementById("plus1").addEventListener("click", function() {
-        var a = document.querySelectorAll(".ans")
-        a.forEach(function(el, i) {
+        var a_el = document.querySelectorAll(".ans")
+        if (a_el.length > 0) {
+            console.log("hello i am a if inside a function namless")
+            a_el.forEach(function(el, i) {
 
-                a[i].value = ""
+                a_el[i].value = ""
 
             })
-            // document.querySelectorAll("")
+        } else {
+            console.log("hello i am a else inside a function named namless")
+
+            addanswer()
+            addanswer()
+        }
+
+        // document.querySelectorAll("")
         document.getElementById("change-me").style.display = "block"
         document.getElementById("prewiewq").style.display = "none"
         $('.ui.modal1').modal({
@@ -641,7 +663,7 @@ if (document.getElementById("sppiner")) {
 
 
 
-    })
+    }
 
 
     function a(el) {
@@ -727,21 +749,7 @@ if (document.getElementById("sppiner")) {
 
         if (ib === true && t_ab === true) {
             var obje = { description: t_a.value, title: inp1.value }
-
-            if (JSON.parse(localStorage.getItem("draft")) && JSON.parse(localStorage.getItem("draft")).question) {
-                var obj = JSON.parse(localStorage.getItem("draft"))
-                obj.title = obje.title
-                obj.description = obje.description
-
-                localStorage.setItem("draft", JSON.stringify(obj))
-                noqtoq("the ib --true tab true")
-
-
-            } else {
-
-                localStorage.setItem("draft", JSON.stringify(obje))
-
-            }
+            localStorage.setItem("draft", JSON.stringify(obje))
 
             r_m.style.display = "none"
                 // setTimeout(errormodel, 100)
@@ -784,12 +792,10 @@ if (document.getElementById("sppiner")) {
                 nq.innerHTML = `${dr.question} <br>`
 
             } else {
-
                 nq.innerHTML += `${dr.question} <br>`
             }
-        } else {
-            nq.toLowerCase() !== "no questions" ? "" : nq.innerHTML = "No Questions "
         }
+
     }
 
     $('.ui.dropdown')
@@ -841,7 +847,26 @@ if (document.getElementById("sppiner")) {
     addClassToAnElementByID("chose-h", "h-80px")
 
     function delete_parentNode(t) {
-        console.log(t, t.id)
+
+        t.parentNode.remove()
     }
 
 }
+/*comment 
+//745 for now
+            if (JSON.parse(localStorage.getItem("draft")) && JSON.parse(localStorage.getItem("draft")).question) {
+                var obj = JSON.parse(localStorage.getItem("draft"))
+                obj.title = obje.title
+                obj.description = obje.description
+
+                localStorage.setItem("draft", JSON.stringify(obj))
+                noqtoq("the ib --true tab true")
+
+
+            } else {
+
+                localStorage.setItem("draft", JSON.stringify(obje))
+
+            }
+
+*/

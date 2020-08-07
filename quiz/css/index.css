@@ -116,6 +116,10 @@
     text-align: center;
 }
 
+.modal {
+    overflow: auto
+}
+
 #bl {
     background-color: black;
 }
@@ -126,6 +130,10 @@
 
 .m-w-70per {
     max-width: 70%;
+}
+
+.m-w-80per {
+    max-width: 80%;
 }
 
 .h-80px {
