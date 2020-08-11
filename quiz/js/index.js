@@ -452,7 +452,7 @@ if (document.getElementById("sppiner")) {
         if (vamail !== emailval) {
             mailb = false
             dinone.style.display === "block" ? console.log("its display block already in mail") : dinone.style.display = "block"
-            ok ? emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please fill the 3rd feild</li>` : regex.test(emailval) !== true ? err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please write a valid Email</li>` : err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; sorry we cannot find any email like this</li>` : err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; sorry we cannot find any email like this</li>`;
+            ok ? emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please fill the 3rd feild</li>` : regex.test(emailval) !== true ? err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please write a valid Email</li>` : err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; sorry we cannotind  fany email like this</li>` : err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; sorry we cannot find any email like this</li>`;
 
         } else {
             mailb = true
@@ -551,17 +551,43 @@ if (document.getElementById("sppiner")) {
 
     function singmul() {
         var doca = document.querySelectorAll(".ans")
-        if (doca.length === 2) {}
+        if (doca.length < 2) {
+            var moda = document.getElementById("unkmodal")
+            moda.style.width = "-webkit-fill-available"
+            $('.erno1.modal')
+                .modal({
+                    centered: false,
+                    allowMultiple: true,
+                    onVisible: function() {
+                        setTimeout(function() { $(".erno1.modal").modal("hide") }, 3000)
+                    }
+
+
+
+                }).modal('setting', 'closable', false)
+
+            .modal('show');
+
+
+        } else {
+            chaange_html()
+        }
     }
 
     function drdown() {
+        var rcnounk = document.getElementById("add-rcnounk")
+        rcnounk.innerHTML = ""
+        var draftloc = JSON.parse(localStorage.getItem("draft"))
         var ansss = document.querySelectorAll(".ans")
         if (ansss.length <= 2) {
+
             ddl.value = "Single"
             ddl.parentNode.style.display = "none"
+                // if(draftloc.ans)
 
-        } else { ddl.style.display = "block" }
+        } else { dl.style.display = "block" }
         if (ddl.value.toLowerCase() === "multiple") {
+
             document.getElementById("radio").style.display = "none"
             var abcde = document.querySelectorAll(".check")
             abcde.forEach(function(el, i) { abcde[i].style.display = "inline-block" })
@@ -580,7 +606,9 @@ if (document.getElementById("sppiner")) {
 
     var quiz = document.getElementById('addquiz-next')
     var fo = document.getElementById('forms')
-    document.getElementById("Add-sub").addEventListener("click", function() {
+    document.getElementById("Add-sub").addEventListener("click", singmul)
+
+    function chaange_html() {
         drdown()
         document.getElementById("change-me").style.display = "none"
         document.getElementById("prewiewq").style.display = "block"
@@ -605,9 +633,10 @@ if (document.getElementById("sppiner")) {
             })
         })
         localStorage.setItem("draft", JSON.stringify(obj))
+        drdown()
 
 
-    })
+    }
     document.getElementById("plus2").addEventListener("click", addanswer)
 
     function addanswer() {
@@ -719,16 +748,18 @@ if (document.getElementById("sppiner")) {
             })
 
         }
-
-        if (t_a.value.trim().length > 200 || t_a.value.trim().length <= 1) {
+        //(t_a.value.trim().length > 200 ||
+        if (t_a.value.trim().length <= 1) {
             t_ab = false
             r_m.style.display = "block"
-            t_a.value.trim().length <= 1 ? add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i> <span class="f-size-large">
+                // t_a.value.trim().length <= 1 ? 
+            add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i> <span class="f-size-large">
             Please write atleast two letters in the description field
-           </span></div>` : add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i>
-            <span class="f-size-large">
-            your description is too long. our max limit is 200. you have crossed the limit. 
            </span></div>`
+                //    : add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i>
+                //     <span class="f-size-large">
+                //     your description is too long. our max limit is 200. you have crossed the limit. 
+                //    </span></div>`
 
         } else {
 

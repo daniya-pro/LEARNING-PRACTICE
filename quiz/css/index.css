@@ -461,6 +461,10 @@
     bottom: 7px;
 }
 
+.modal {
+    overflow: auto;
+}
+
 .noselect,
 a,
 body {
