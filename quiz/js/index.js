@@ -220,7 +220,7 @@ if (document.getElementById("sppiner")) {
 
         if (fnamval.length <= 0) {
             dinone.style.display = "block"
-            err.innerHTML += `<li class="a" id="a" value="❌">&nbsp;please fill the first feild</li>`
+            err.innerHTML += `<li class="a" id="a" value="❌"> please fill the first feild</li>`
             fnamval.length === 0 ? console.log("true lengh is 0") : console.log("false lengh is not 0")
             fnameb = false
         } else {
@@ -263,7 +263,7 @@ if (document.getElementById("sppiner")) {
         if (lnameval.length === 0) {
             lnamb = false
             dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
-            err.innerHTML += `<li class="b" id="b" value="❌">&nbsp;please fill the second feild</li>`
+            err.innerHTML += `<li class="b" id="b" value="❌"> please fill the second feild</li>`
 
         } else {
 
@@ -285,7 +285,7 @@ if (document.getElementById("sppiner")) {
         if (regex.test(emailval) === false) {
             mailb = false
             dinone.style.display !== "block" ? dinone.style.display = "block" : console.log("its display block aleady")
-            emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please fill the third feild</li>` : err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please write a correct email in third field</li>`
+            emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">  please fill the third feild</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  please write a correct email in third field</li>`
 
         } else {
 
@@ -329,7 +329,7 @@ if (document.getElementById("sppiner")) {
         if (passval.length <= 5) {
             pasb = false
 
-            passval.length === 0 ? err.innerHTML += `<li class="d" id="d" value="❌">&nbsp;please fill the fourth feild</li>` : err.innerHTML += `<li class="d" id="d" value="❌">&nbsp; please write atleast 6 letters for password in fourth feild</li>`
+            passval.length === 0 ? err.innerHTML += `<li class="d" id="d" value="❌"> please fill the fourth feild</li>` : err.innerHTML += `<li class="d" id="d" value="❌">  please write atleast 6 letters for password in fourth feild</li>`
 
             dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
 
@@ -452,7 +452,7 @@ if (document.getElementById("sppiner")) {
         if (vamail !== emailval) {
             mailb = false
             dinone.style.display === "block" ? console.log("its display block already in mail") : dinone.style.display = "block"
-            ok ? emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please fill the 3rd feild</li>` : regex.test(emailval) !== true ? err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; please write a valid Email</li>` : err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; sorry we cannotind  fany email like this</li>` : err.innerHTML += `<li class="c" id="c" value="❌">&nbsp; sorry we cannot find any email like this</li>`;
+            ok ? emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">  please fill the 3rd feild</li>` : regex.test(emailval) !== true ? err.innerHTML += `<li class="c" id="c" value="❌">  please write a valid Email</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  sorry we cannotind  fany email like this</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  sorry we cannot find any email like this</li>`;
 
         } else {
             mailb = true
@@ -472,7 +472,7 @@ if (document.getElementById("sppiner")) {
         if (passval !== vapass) {
             pasb = false
 
-            ok ? passval.length === 0 ? err.innerHTML += `<li class="d" id="d" value="❌">&nbsp; please fill the 4rth feild</li>` : err.innerHTML += `<li class="d" id="d" value="❌">&nbsp; sorry we cannot find any Password like this</li>` : err.innerHTML += `<li class="d" id="d" value="❌">&nbsp; sorry we cannot find any Password like this</li>`;
+            ok ? passval.length === 0 ? err.innerHTML += `<li class="d" id="d" value="❌">  please fill the 4rth feild</li>` : err.innerHTML += `<li class="d" id="d" value="❌">  sorry we cannot find any Password like this</li>` : err.innerHTML += `<li class="d" id="d" value="❌">  sorry we cannot find any Password like this</li>`;
             dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
 
         } else {
@@ -575,26 +575,64 @@ if (document.getElementById("sppiner")) {
     }
 
     function drdown() {
-        var rcnounk = document.getElementById("add-rcnounk")
-        rcnounk.innerHTML = ""
+        var Radio_el_parent = document.getElementById("add-Radio_elements")
+        Radio_el_parent.innerHTML = ""
+        var Checkbox_el_parent = document.getElementById("add-checkboxes_elements")
+        Checkbox_el_parent.innerHTML = ""
         var draftloc = JSON.parse(localStorage.getItem("draft"))
         var ansss = document.querySelectorAll(".ans")
         if (ansss.length <= 2) {
-
             ddl.value = "Single"
             ddl.parentNode.style.display = "none"
-                // if(draftloc.ans)
 
-        } else { dl.style.display = "block" }
+
+        } else {
+
+            ddl.parentNode.style.display = "block"
+
+
+        }
+
         if (ddl.value.toLowerCase() === "multiple") {
 
+            console.log("mult")
+            if (draftloc.ans) {
+                console.log("draftloc excist")
+                for (var i = 0; i < draftloc.ans["length"]; i++) {
+                    console.log("draftloc.ans ", i, " ===> ", draftloc.ans[i], "element Radio_el_parent ===> ", Radio_el_parent)
+
+                    Checkbox_el_parent.innerHTML += ` 
+                    <div class="ui checkbox">
+  <input type="checkbox" name="example">
+       <label>${draftloc.ans[i]}</label>
+                    </div>
+                    <br>
+              `
+
+                }
+
+            }
             document.getElementById("radio").style.display = "none"
             var abcde = document.querySelectorAll(".check")
             abcde.forEach(function(el, i) { abcde[i].style.display = "inline-block" })
         }
         if (ddl.value.toLowerCase() === "single") {
+            console.log("sing")
 
+            if (draftloc.ans) {
+                console.log("draftloc excist")
+                for (var i = 0; i < draftloc.ans["length"]; i++) {
+                    console.log("draftloc.ans ", i, " ===> ", draftloc.ans[i], "element Radio_el_parent ===> ", Radio_el_parent)
+                    Radio_el_parent.innerHTML += `<div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="example2">
+                        <label>${draftloc.ans[i]}</label>
+                    </div>
+                </div>`
 
+                }
+
+            }
             var abcde = document.querySelectorAll(".check")
             abcde.forEach(function(el, i) { abcde[i].style.display = "none" })
             document.getElementById("radio").style.display = "inline-block"
@@ -609,7 +647,6 @@ if (document.getElementById("sppiner")) {
     document.getElementById("Add-sub").addEventListener("click", singmul)
 
     function chaange_html() {
-        drdown()
         document.getElementById("change-me").style.display = "none"
         document.getElementById("prewiewq").style.display = "block"
         var obj = JSON.parse(localStorage.getItem("draft"))
@@ -633,6 +670,7 @@ if (document.getElementById("sppiner")) {
             })
         })
         localStorage.setItem("draft", JSON.stringify(obj))
+        console.log("next is function drdown")
         drdown()
 
 
@@ -659,6 +697,17 @@ if (document.getElementById("sppiner")) {
     function namless() {
 
         var a_el = document.querySelectorAll(".ans")
+        if (a_el.length > 2) {
+
+            a_el.forEach(function(el, i) {
+                console.log("ans legnth is not 2")
+
+                if (a_el.length === 2) { console.log("ans legnth is 2") } else if (a_el.length < 2) {
+                    a_el[i].remove()
+                }
+            })
+
+        }
         if (a_el.length > 0) {
             console.log("hello i am a if inside a function namless")
             a_el.forEach(function(el, i) {

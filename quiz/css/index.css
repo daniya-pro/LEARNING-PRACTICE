@@ -521,6 +521,10 @@ body {
     right: 0px;
 }
 
+.ml-20 {
+    margin-left: 20px !important;
+}
+
 .t-29px {
     top: 29px;
 }

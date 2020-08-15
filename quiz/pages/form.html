@@ -106,8 +106,8 @@
                 <div class="p-abs mr-0">
                     <div class="ui two column grid">
                         <select id="drop" class="ui mt-13 dropdown">
-                            <option value="Multiple">Multiple</option>
                             <option value="Single">Single</option>
+                            <option value="Multiple">Multiple</option>
                         </select>
                     </div>
                 </div>
@@ -116,73 +116,57 @@
                 <div class="ui two column grid">
 
                     <div class="gainsboro column p-2rem">Question?
-                        <div id="add-rcnounk"></div>
-                        <div class="ml-negative-20 mt-9">
-                            <div class="ui check checkbox">
-
-                                <input type="checkbox" name="example">
-                                <label>yes</label>
-                            </div>
-                        </div>
-
-                        <div class="ml-negative-20">
-                            <div class="ui check checkbox">
-
-                                <input type="checkbox" name="example">
-                                <label>no</label>
-                            </div>
-
-                        </div>
                         <div class="ml-negative-20">
                             <div style="display: none;" id="radio" class="ui radio">
-                                <div class="ui form">
-                                    <div class="grouped fields">
-                                        <div class="field">
-                                            <div class="ui radio checkbox">
-                                                <input type="radio" name="example2" checked="checked">
-                                                <label>yes</label>
-                                            </div>
-                                        </div>
-                                        <div class="field">
-                                            <div class="ui radio checkbox">
-                                                <input type="radio" name="example2">
-                                                <label>no</label>
-                                            </div>
-                                        </div>
+                                <div class="ui form talign-left margin5 ml-20">
+                                    <div class="grouped fields" id="add-Radio_elements">
+
                                     </div>
                                 </div>
+
+                            </div>
+
+                        </div>
+                        <div class="ml-negative-20">
+                            <div id="checkbox" class="ui check">
+                                <div class="ui form talign-left margin5 ml-20">
+                                    <div id="add-checkboxes_elements">
+
+                                    </div>
+                                </div>
+
                             </div>
 
                         </div>
 
-                    </div>
 
-                    <!--  -->
-                    <div><button onclick="hidenoq($('.ui.modal1.modal'),'i am using hidenoq')" class="ui button inverted-black mb-5 mt-9 margin5">SUBMIT</button></div>
+
+                        <!--  -->
+                        <div><button onclick="hidenoq($('.ui.modal1.modal'),'i am using hidenoq')" class="ui button inverted-black mb-5 mt-9 margin5">SUBMIT</button></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ui special modal b-radi-0 top0m0impo p-28-0-28 bg-red transition">
-        <div class="center colorwhite">
-            <span class="">❌</span> You Have To Add A Question
-            <i class="close icon c-white hover-c-red" onclick="a($('.ui.special.modal'))"></i>
+        <div class="ui special modal b-radi-0 top0m0impo p-28-0-28 bg-red transition">
+            <div class="center colorwhite">
+                <span class="">❌</span> You Have To Add A Question
+                <i class="close icon c-white hover-c-red" onclick="a($('.ui.special.modal'))"></i>
 
-        </div>
-    </div>
-
-
-
-    <div class="ui modal erno1 b-radi-0 top0m0impo p-28-0-28 bg-red" id="unkmodal">
-
-        <div class="center colorwhite">
-            <span class="">❌</span> Atleast Write Two Answers
-            <i class="close icon c-white hover-c-red" onclick="a($('modal.erno1'))"></i>
-
+            </div>
         </div>
 
-    </div>
-    <!-- 
+
+
+        <div class="ui modal erno1 b-radi-0 top0m0impo p-28-0-28 bg-red" id="unkmodal">
+
+            <div class="center colorwhite">
+                <span class="">❌</span> Atleast Write Two Answers
+                <i class="close icon c-white hover-c-red" onclick="a($('modal.erno1'))"></i>
+
+            </div>
+
+        </div>
+        <!-- 
     <div class="ui special modal p-abs">
 
         <div class="ui red message">
@@ -191,9 +175,9 @@
 
     </div> -->
 
-    <script src="../semantic/jquery-3.2.1.min.js"></script>
-    <script src="../semantic/Semantic-UI-CSS-master/semantic.js"></script>
-    <script src="../js/index.js"></script>
+        <script src="../semantic/jquery-3.2.1.min.js"></script>
+        <script src="../semantic/Semantic-UI-CSS-master/semantic.js"></script>
+        <script src="../js/index.js"></script>
 </body>
 
 </html>
