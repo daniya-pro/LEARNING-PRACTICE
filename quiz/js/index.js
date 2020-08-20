@@ -551,6 +551,7 @@ if (document.getElementById("sppiner")) {
 
     function singmul() {
         var doca = document.querySelectorAll(".ans")
+
         if (doca.length < 2) {
             var moda = document.getElementById("unkmodal")
             moda.style.width = "-webkit-fill-available"
@@ -693,8 +694,29 @@ if (document.getElementById("sppiner")) {
         addingans.appendChild(MyNewDiv)
     }
     document.getElementById("plus1").addEventListener("click", namless)
+        //civbq === clear input value by querySelectorAll
+        //ECOI === Element's Class Or Id
+        //CV === Console.Log's Value
+    function CIVBQ(ECOI, CV) {
+
+        ECOI.forEach(function(el, ind) {
+            el.value = ""
+            console.log(CV)
+            ECOI[ind].value = ''
+        })
+
+    }
 
     function namless() {
+        var docq = document.querySelectorAll(".q")
+        var tcons = "docq.value ==="
+        CIVBQ(docq, tcons + docq[0].value)
+
+        // docq.forEach(function(el, ind) {
+        //     el.value = ""
+        //     console.log(".q ===", docq, "its value", docq[ind].value)
+        //     docq[ind].value = ''
+        // })
 
         var a_el = document.querySelectorAll(".ans")
         if (a_el.length > 2) {
