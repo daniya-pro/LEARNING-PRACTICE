@@ -695,14 +695,28 @@ if (document.getElementById("sppiner")) {
     }
     document.getElementById("plus1").addEventListener("click", namless)
         //civbq === clear input value by querySelectorAll
-        //ECOI === Element's Class Or Id
+        //ECOIOEI === Element's Class Or Id Or Element Itself
         //CV === Console.Log's Value
-    function CIVBQ(ECOI, CV) {
+        //WTD=what to do
+    function CIVBQ(ECOIOEI, CV, WTD) {
+        if (WTD.toLowerCase() === "el") {
 
-        ECOI.forEach(function(el, ind) {
+
+
+        } else if (WTD.toLowerCase() === "cl") {
+
+            var ecoi2 = document.querySelectorAll(`.${ECOIOEI}`)
+            ECOIOEI = ecoi2
+        } else if (WTD.toLowerCase() === "id") {
+
+            var ecoi2 = document.querySelectorAll(`#${ECOIOEI}`)
+            ECOIOEI = ecoi2
+        }
+
+        ECOIOEI.forEach(function(el, ind) {
             el.value = ""
             console.log(CV)
-            ECOI[ind].value = ''
+            ECOIOEI[ind].value = ''
         })
 
     }
@@ -710,7 +724,7 @@ if (document.getElementById("sppiner")) {
     function namless() {
         var docq = document.querySelectorAll(".q")
         var tcons = "docq.value ==="
-        CIVBQ(docq, tcons + docq[0].value)
+        CIVBQ(docq, tcons + docq[0].value, "el")
 
         // docq.forEach(function(el, ind) {
         //     el.value = ""
