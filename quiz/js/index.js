@@ -544,13 +544,14 @@ if (document.getElementById("sppiner")) {
     EyeEl.addEventListener("mouseout", eye_slash);
     EyeEl.addEventListener("mouseover", eye);
 
-
 } else {
+    -
     var myGlobalVar;
     var ddl = document.getElementById("drop");
 
     function singmul() {
         var doca = document.querySelectorAll(".ans")
+        doca.forEach(function(a, i) { if (doca[i].value === "") {} })
 
         if (doca.length < 2) {
             var moda = document.getElementById("unkmodal")
