@@ -545,13 +545,31 @@ if (document.getElementById("sppiner")) {
     EyeEl.addEventListener("mouseover", eye);
 
 } else {
-    -
+
     var myGlobalVar;
     var ddl = document.getElementById("drop");
 
     function singmul() {
+        var BFFAIC;
         var doca = document.querySelectorAll(".ans")
-        doca.forEach(function(a, i) { if (doca[i].value === "") {} })
+        doca.forEach(function(a, i) {
+            if (doca[i].value === "") {
+                BFFAIC = false
+                $(".modal#EMO").modal({
+                    allowMultiple: true
+                }).modal("show")
+                var EMO = document.getElementById("EMO")
+                var EMOPN = EMO.parentNode
+                if (EMOPN.tagName !== "BODY") {
+                    EMO.style.width = "-webkit-fill-available"
+
+                    EMOPN.className += " bg-tr p-abs"
+                    EMOPN.style.top = "0px"
+                    EMOPN.style.display = "flex"
+                    EMOPN.setAttribute("style", "top: 0px !important; display:flex !important; background-color:transparent !important;")
+                }
+            }
+        })
 
         if (doca.length < 2) {
             var moda = document.getElementById("unkmodal")
@@ -572,7 +590,9 @@ if (document.getElementById("sppiner")) {
 
 
         } else {
-            chaange_html()
+            if (BFFAIC === true) {
+                chaange_html()
+            }
         }
     }
 
@@ -937,9 +957,10 @@ if (document.getElementById("sppiner")) {
                 }).modal('setting', 'closable', false)
 
             .modal('show');
+
             var modelparent = document.querySelector(".ui.special.modal").parentNode
             var model = document.querySelector(".ui.special.modal")
-            if (modelparent.tagName.toLowerCase() === "body") {} else {
+            if (modelparent.tagName.toUpperCase() === "body") {} else {
                 model.style.width = "-webkit-fill-available"
 
                 modelparent.className += " bg-tr p-abs"
