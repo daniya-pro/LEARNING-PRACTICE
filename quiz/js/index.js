@@ -550,10 +550,14 @@ if (document.getElementById("sppiner")) {
     var ddl = document.getElementById("drop");
 
     function singmul() {
+        var CL = console.log
+        CL("singmul func")
         var BFFAIC;
         var doca = document.querySelectorAll(".ans")
+        var QU = document.getElementById("q")
         doca.forEach(function(a, i) {
             if (doca[i].value === "") {
+                CL("singmul func if")
                 BFFAIC = false
                 $(".modal#EMO").modal({
                     allowMultiple: true
@@ -563,12 +567,36 @@ if (document.getElementById("sppiner")) {
                 if (EMOPN.tagName !== "BODY") {
                     EMO.style.width = "-webkit-fill-available"
 
-                    EMOPN.className += " bg-tr p-abs"
+                    EMOPN.className += " p-abs"
                     EMOPN.style.top = "0px"
                     EMOPN.style.display = "flex"
-                    EMOPN.setAttribute("style", "top: 0px !important; display:flex !important; background-color:transparent !important;")
+                    EMOPN.setAttribute("style", "top: 0px !important; display:flex !important;")
                 }
+            } else if (QU.value ? QU.value.trim() === '' : true) {
+                BFFAIC = false
+                CL("singmul func elseif", QU.value ? QU.value.trim() === '' : true, QU.value)
+
+                $(".modal#EMO").modal({
+                    allowMultiple: true
+                }).modal("show")
+
+                var EMO = document.getElementById("EMO")
+                var EMOPN = EMO.parentNode
+                if (EMOPN.tagName !== "BODY") {
+                    EMO.style.width = "-webkit-fill-available"
+
+                    EMOPN.className += " p-abs"
+                    EMOPN.style.top = "0px"
+                    EMOPN.style.display = "flex"
+                    EMOPN.setAttribute("style", "top: 0px !important; display:flex !important;")
+                }
+
+            } else {
+                BFFAIC = true
+                CL("singmul func else")
             }
+            setTimeout(function() { $(".modal#EMO").modal("hide") }, 1000);
+
         })
 
         if (doca.length < 2) {
@@ -603,6 +631,11 @@ if (document.getElementById("sppiner")) {
         Checkbox_el_parent.innerHTML = ""
         var draftloc = JSON.parse(localStorage.getItem("draft"))
         var ansss = document.querySelectorAll(".ans")
+        if (draftloc.question) {
+
+            document.getElementById("QU").innerText = draftloc.question
+
+        }
         if (ansss.length <= 2) {
             ddl.value = "Single"
             ddl.parentNode.style.display = "none"
@@ -638,6 +671,7 @@ if (document.getElementById("sppiner")) {
             var abcde = document.querySelectorAll(".check")
             abcde.forEach(function(el, i) { abcde[i].style.display = "inline-block" })
         }
+
         if (ddl.value.toLowerCase() === "single") {
             console.log("sing")
 
@@ -645,12 +679,15 @@ if (document.getElementById("sppiner")) {
                 console.log("draftloc excist")
                 for (var i = 0; i < draftloc.ans["length"]; i++) {
                     console.log("draftloc.ans ", i, " ===> ", draftloc.ans[i], "element Radio_el_parent ===> ", Radio_el_parent)
-                    Radio_el_parent.innerHTML += `<div class="field">
+                    Radio_el_parent.innerHTML += `
+                    
+                    <div class="field">
                     <div class="ui radio checkbox">
                         <input type="radio" name="example2">
                         <label>${draftloc.ans[i]}</label>
                     </div>
-                </div>`
+                </div>
+                `
 
                 }
 
@@ -1008,3 +1045,4 @@ if (document.getElementById("sppiner")) {
             }
 
 */
+//"
