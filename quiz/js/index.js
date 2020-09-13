@@ -679,11 +679,13 @@ if (document.getElementById("sppiner")) {
                 console.log("draftloc excist")
                 for (var i = 0; i < draftloc.ans["length"]; i++) {
                     console.log("draftloc.ans ", i, " ===> ", draftloc.ans[i], "element Radio_el_parent ===> ", Radio_el_parent)
+                   
+                    var IFR = document.getElementById(`${i}`)?i++:i
                     Radio_el_parent.innerHTML += `
                     
                     <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" name="example2">
+                        <input type="radio" class="run" id="r${IFR}" name="number">
                         <label>${draftloc.ans[i]}</label>
                     </div>
                 </div>

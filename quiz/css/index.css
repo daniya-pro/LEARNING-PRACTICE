@@ -316,7 +316,11 @@
 .hei-54 {
     height: 54px;
 }
+.wb-bw{
 
+    word-break: break-word
+
+}
 .top-right {
     position: absolute;
     right: 0px;
