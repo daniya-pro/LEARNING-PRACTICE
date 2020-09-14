@@ -659,7 +659,7 @@ if (document.getElementById("sppiner")) {
 
                     Checkbox_el_parent.innerHTML += ` 
                     <div class="ui checkbox">
-  <input type="checkbox" id="c${IFC}" name="example">
+  <input type="checkbox" class="cun" id="c${IFC}" value="${draftloc.ans[i]}" name="example">
        <label>${draftloc.ans[i]}</label>
                     </div>
                     <br>
@@ -686,7 +686,7 @@ if (document.getElementById("sppiner")) {
                     
                     <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" class="run" id="r${IFR}" name="number">
+                        <input type="radio" class="run" value="${draftloc.ans[i]}" id="r${IFR}" name="number">
                         <label>${draftloc.ans[i]}</label>
                     </div>
                 </div>
@@ -848,16 +848,33 @@ if (document.getElementById("sppiner")) {
 document.getElementById("SBOPQ").addEventListener("click",CROC)
 function CROC(){
 if(document.querySelectorAll("input[type=radio]").length >0){
-    var BTOF
+    var BORB;
+    var LKD=JSON.parse(localStorage.getItem("draft"))
     document.querySelectorAll("input[type=radio]").forEach(function(el,num){
         if(el.checked){
-console.log(el,"<== el")
+BORB =true
+            LKD.ans.forEach(function(ele,i){
 
-            
+if(LKD.ans[i]===el.value){
+            LKD.ans[i]={value:el.value,isCorrect:true}
+                   }      
+             localStorage.setItem("draft",JSON.stringify(LKD)) 
+                });
         }
     })
 }
+var EMO2 =document.getElementById("EMO2")
+if(BORB&&BORB===true){hidenoq($('.ui.modal1.modal'),'i am using hidenoq')}else{
 
+    $(".modal#EMO2").modal({allowMultiple:true}).modal('show')
+    setTimeout(function(){
+
+        $(".modal#EMO2").modal("hide")
+
+    },1000)
+
+EMO2.style.width= "-webkit-fill-available"
+}
 if(document.querySelectorAll("input[type=checkbox]").length >0){
 
 
