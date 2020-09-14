@@ -654,11 +654,12 @@ if (document.getElementById("sppiner")) {
             if (draftloc.ans) {
                 console.log("draftloc excist")
                 for (var i = 0; i < draftloc.ans["length"]; i++) {
+                    var IFC = document.getElementById(`${i}`)?i++:i;
                     console.log("draftloc.ans ", i, " ===> ", draftloc.ans[i], "element Radio_el_parent ===> ", Radio_el_parent)
 
                     Checkbox_el_parent.innerHTML += ` 
                     <div class="ui checkbox">
-  <input type="checkbox" name="example">
+  <input type="checkbox" id="c${IFC}" name="example">
        <label>${draftloc.ans[i]}</label>
                     </div>
                     <br>
@@ -803,8 +804,8 @@ if (document.getElementById("sppiner")) {
                 }
             })
 
-        }
-        if (a_el.length > 0) {
+                }
+                if (a_el.length > 0) {
             console.log("hello i am a if inside a function namless")
             a_el.forEach(function(el, i) {
 
@@ -840,18 +841,30 @@ if (document.getElementById("sppiner")) {
     }
 
 
-    function a(el) {
+    function a(el) { 
         el.modal("hide")
         document.getElementById('change-me').style.display = 'block';
-
-
-
-
-
-
-
     }
+document.getElementById("SBOPQ").addEventListener("click",CROC)
+function CROC(){
+if(document.querySelectorAll("input[type=radio]").length >0){
+    var BTOF
+    document.querySelectorAll("input[type=radio]").forEach(function(el,num){
+        if(el.checked){
+console.log(el,"<== el")
 
+            
+        }
+    })
+}
+
+if(document.querySelectorAll("input[type=checkbox]").length >0){
+
+
+
+}
+
+}
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
         a(modaltohide);
