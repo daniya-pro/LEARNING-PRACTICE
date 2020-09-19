@@ -654,7 +654,7 @@ if (document.getElementById("sppiner")) {
             if (draftloc.ans) {
                 console.log("draftloc excist")
                 for (var i = 0; i < draftloc.ans["length"]; i++) {
-                    var IFC = document.getElementById(`${i}`)?i++:i;
+                    var IFC = document.getElementById(`${i}`) ? i++ : i;
                     console.log("draftloc.ans ", i, " ===> ", draftloc.ans[i], "element Radio_el_parent ===> ", Radio_el_parent)
 
                     Checkbox_el_parent.innerHTML += ` 
@@ -680,8 +680,8 @@ if (document.getElementById("sppiner")) {
                 console.log("draftloc excist")
                 for (var i = 0; i < draftloc.ans["length"]; i++) {
                     console.log("draftloc.ans ", i, " ===> ", draftloc.ans[i], "element Radio_el_parent ===> ", Radio_el_parent)
-                   
-                    var IFR = document.getElementById(`${i}`)?i++:i
+
+                    var IFR = document.getElementById(`${i}`) ? i++ : i
                     Radio_el_parent.innerHTML += `
                     
                     <div class="field">
@@ -795,17 +795,15 @@ if (document.getElementById("sppiner")) {
 
         var a_el = document.querySelectorAll(".ans")
         if (a_el.length > 2) {
-
             a_el.forEach(function(el, i) {
-                console.log("ans legnth is not 2")
-
-                if (a_el.length === 2) { console.log("ans legnth is 2") } else if (a_el.length < 2) {
-                    a_el[i].remove()
+                if (i > 1) {
+                    a_el[i].parentNode.remove()
                 }
+
             })
 
-                }
-                if (a_el.length > 0) {
+        }
+        if (a_el.length > 0) {
             console.log("hello i am a if inside a function namless")
             a_el.forEach(function(el, i) {
 
@@ -841,47 +839,51 @@ if (document.getElementById("sppiner")) {
     }
 
 
-    function a(el) { 
+    function a(el) {
         el.modal("hide")
         document.getElementById('change-me').style.display = 'block';
     }
-document.getElementById("SBOPQ").addEventListener("click",CROC)
-function CROC(){
-if(document.querySelectorAll("input[type=radio]").length >0){
-    var BORB;
-    var LKD=JSON.parse(localStorage.getItem("draft"))
-    document.querySelectorAll("input[type=radio]").forEach(function(el,num){
-        if(el.checked){
-BORB =true
-            LKD.ans.forEach(function(ele,i){
+    document.getElementById("SBOPQ").addEventListener("click", CROC)
 
-if(LKD.ans[i]===el.value){
-            LKD.ans[i]={value:el.value,isCorrect:true}
-                   }      
-             localStorage.setItem("draft",JSON.stringify(LKD)) 
-                });
+    function CROC() {
+        var EMO2 = document.getElementById("EMO2")
+
+        if (document.querySelectorAll("input[type=radio]").length > 0) {
+            var BORB;
+            var LKD = JSON.parse(localStorage.getItem("draft"))
+            document.querySelectorAll("input[type=radio]").forEach(function(el, num) {
+                if (el.checked) {
+                    BORB = true
+                    LKD.ans.forEach(function(ele, i) {
+
+                        if (LKD.ans[i] === el.value) {
+                            LKD.ans[i] = { value: el.value, isCorrect: true }
+                        }
+                        localStorage.setItem("draft", JSON.stringify(LKD))
+                    });
+                }
+            })
+            if (BORB && BORB === true) { hidenoq($('.ui.modal1.modal'), 'i am using hidenoq') } else {
+
+                $(".modal#EMO2").modal({ allowMultiple: true }).modal('show')
+                setTimeout(function() {
+
+                    $(".modal#EMO2").modal("hide")
+
+                }, 1000)
+
+                EMO2.style.width = "-webkit-fill-available"
+            }
         }
-    })
-}
-var EMO2 =document.getElementById("EMO2")
-if(BORB&&BORB===true){hidenoq($('.ui.modal1.modal'),'i am using hidenoq')}else{
 
-    $(".modal#EMO2").modal({allowMultiple:true}).modal('show')
-    setTimeout(function(){
-
-        $(".modal#EMO2").modal("hide")
-
-    },1000)
-
-EMO2.style.width= "-webkit-fill-available"
-}
-if(document.querySelectorAll("input[type=checkbox]").length >0){
+        if (document.querySelectorAll("input[type=checkbox]").length > 0) {
 
 
 
-}
+        }
 
-}
+    }
+
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
         a(modaltohide);
