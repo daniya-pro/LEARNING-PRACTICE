@@ -847,13 +847,13 @@ if (document.getElementById("sppiner")) {
 
     function CROC() {
         var EMO2 = document.getElementById("EMO2")
+        var LKD = JSON.parse(localStorage.getItem("draft"))
 
         if (document.querySelectorAll("input[type=radio]").length > 0) {
-            var BORB;
-            var LKD = JSON.parse(localStorage.getItem("draft"))
+            var BFRB;
             document.querySelectorAll("input[type=radio]").forEach(function(el, num) {
                 if (el.checked) {
-                    BORB = true
+                    BFRB = true
                     LKD.ans.forEach(function(ele, i) {
 
                         if (LKD.ans[i] === el.value) {
@@ -863,7 +863,7 @@ if (document.getElementById("sppiner")) {
                     });
                 }
             })
-            if (BORB && BORB === true) { hidenoq($('.ui.modal1.modal'), 'i am using hidenoq') } else {
+            if (BFRB && BFRB === true) { hidenoq($('.ui.modal1.modal'), 'i am using hidenoq') } else {
 
                 $(".modal#EMO2").modal({ allowMultiple: true }).modal('show')
                 setTimeout(function() {
@@ -877,9 +877,20 @@ if (document.getElementById("sppiner")) {
         }
 
         if (document.querySelectorAll("input[type=checkbox]").length > 0) {
+            var BFCB;
 
+            document.querySelectorAll("input[type=checkbox]").forEach(function(el, num) {
+                if (el.checked) {
+                    BFCB = true
+                    LKD.ans.forEach(function(ele, i) {
 
-
+                        if (LKD.ans[i] === el.value) {
+                            LKD.ans[i] = { value: el.value, isCorrect: true }
+                        }
+                        localStorage.setItem("draft", JSON.stringify(LKD))
+                    });
+                }
+            })
         }
 
     }
