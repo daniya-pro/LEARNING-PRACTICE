@@ -321,6 +321,7 @@
     word-break: break-word
 
 }
+
 .top-right {
     position: absolute;
     right: 0px;
@@ -764,7 +765,23 @@ select {
         margin-top: 2px;
     }
 }
+@media only screen and (max-width: 376px) {
 
+.MQ-376-T86P{
+
+    top: 86px !important;
+
+}
+}
+@media only screen and (max-width: 436px) {
+
+.MQ-436-FS-XXS-PL5PPR4P{
+font-size: xx-small;
+padding-left: 5px;
+padding-right: 4px;
+
+}
+}
 @media only screen and (max-width: 476px) {
     .m-47 {
         margin-left: 47px!important;
@@ -772,7 +789,6 @@ select {
 }
 
 @media only screen and (max-width: 476px) {
-    #button-button,
     #btn {
         display: none!important;
     }
