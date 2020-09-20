@@ -709,19 +709,21 @@ if (document.getElementById("sppiner")) {
     document.getElementById("Add-sub").addEventListener("click", singmul)
 
     function chaange_html() {
+        var iq = document.getElementById("q")
         document.getElementById("change-me").style.display = "none"
         document.getElementById("prewiewq").style.display = "block"
         var obj = JSON.parse(localStorage.getItem("draft"))
         var answer = []
+        var LGQQ = JSON.parse(localStorage.getItem("QA"))
         var doca = document.querySelectorAll(".ans")
-        var qu = [];
+        var qu = LGQQ ? qu = LGQQ : qu = [];
+        qu.push(iq.value)
         doca.forEach(function(el, i) {
             answer.push(doca[i].value)
 
         })
 
         var docq = document.querySelectorAll(".q");
-        var iq = document.getElementById("q")
 
         docq.forEach(function(el, i) {
 
@@ -732,6 +734,7 @@ if (document.getElementById("sppiner")) {
             })
         })
         localStorage.setItem("draft", JSON.stringify(obj))
+        localStorage.setItem("QA", JSON.stringify(qu))
         console.log("next is function drdown")
         drdown()
 
@@ -894,6 +897,16 @@ if (document.getElementById("sppiner")) {
         }
 
     }
+    document.getElementById("close").addEventListener("click", function() {
+
+        var JPLGQA = JSON.parse(localStorage.getItem("QA"))
+        JPLGQA.que.forEach(function(AE, i) {
+            JPLGQA.que[i]
+
+
+        })
+
+    })
 
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
@@ -901,8 +914,8 @@ if (document.getElementById("sppiner")) {
         noqtoq(textToDisplayInConsole)
 
     }
-    var aa = document.getElementById("title-sub")
-    aa.addEventListener("click", errormodel)
+    var DGEITS = document.getElementById("title-sub")
+    DGEITS.addEventListener("click", errormodel)
     quiz.addEventListener("click", function() {
         var inp1 = document.getElementById("inp1");
         var t_a = document.getElementById("t-a");
