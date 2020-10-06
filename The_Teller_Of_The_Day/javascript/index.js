@@ -9,9 +9,9 @@ setTimeout(removeLoading, 600)
 var H2 = document.getElementById("h2")
 
 function daytell() {
-    var days_array = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    var days_array = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     var newday = new Date().getDay()
-    var TheResultDay = days_array[newday - 1]
+    var TheResultDay = days_array[newday]
     H2.innerHTML = "Today The Day Is = " + TheResultDay
 }
 
