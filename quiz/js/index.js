@@ -904,8 +904,6 @@ if (document.getElementById("sppiner")) {
         }
 
     }
-
-
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
         a(modaltohide);
