@@ -1,0 +1,17 @@
+.center{text-align: center !important;
+    text-align: -webkit-center !important;
+
+} 
+.borb-b{
+
+border-bottom:3px solid gainsboro !important;
+box-shadow: 0 0 black !important;
+
+}
+.input{
+
+    border: 0.3px solid gainsboro;
+    width: 14em;
+    display: block !important;
+    padding: 8px;
+}
