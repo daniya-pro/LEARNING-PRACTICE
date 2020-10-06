@@ -533,7 +533,14 @@ if (document.getElementById("sppiner")) {
 
     }
 
-    //Event Listners Below :-
+    function LSDGDE() {
+        if (localStorage.getItem("draft")) {
+
+            document.getElementById("quizcontainer")
+
+
+        }
+    } //Event Listners Below :-
 
     const EyeEl = document.getElementById("eye");
     document.getElementById("button-button").addEventListener('click', createQuiz);
@@ -660,11 +667,11 @@ if (document.getElementById("sppiner")) {
                     Checkbox_el_parent.innerHTML += ` 
                     <div class="ui checkbox">
   <input type="checkbox" class="cun" id="c${IFC}" value="${draftloc.ans[i]}" name="example">
-       <label>${draftloc.ans[i]}</label>
+       <label id=l${IFC}></label>
                     </div>
                     <br>
               `
-
+                    document.getElementById(`l${ifc}`).innerText = `${draftloc.ans[i]}`
                 }
 
             }
@@ -714,7 +721,7 @@ if (document.getElementById("sppiner")) {
         document.getElementById("prewiewq").style.display = "block"
         var obj = JSON.parse(localStorage.getItem("draft"))
         var answer = []
-        var LGQQ = JSON.parse(localStorage.getItem("QA"))
+        var LGQQ = JSON.parse(localStorage.getItem("QAdraft"))
         var doca = document.querySelectorAll(".ans")
         var qu = LGQQ ? qu = LGQQ : qu = [];
         qu.push(iq.value)
@@ -734,7 +741,7 @@ if (document.getElementById("sppiner")) {
             })
         })
         localStorage.setItem("draft", JSON.stringify(obj))
-        localStorage.setItem("QA", JSON.stringify(qu))
+        localStorage.setItem("QAdraft", JSON.stringify(qu))
         console.log("next is function drdown")
         drdown()
 
@@ -897,16 +904,7 @@ if (document.getElementById("sppiner")) {
         }
 
     }
-    document.getElementById("close").addEventListener("click", function() {
 
-        var JPLGQA = JSON.parse(localStorage.getItem("QA"))
-        JPLGQA.que.forEach(function(AE, i) {
-            JPLGQA.que[i]
-
-
-        })
-
-    })
 
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
@@ -960,6 +958,8 @@ if (document.getElementById("sppiner")) {
                 //    : add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i>
                 //     <span class="f-size-large">
                 //     your description is too long. our max limit is 200. you have crossed the limit. 
+                //     your description is too long. our max limit is 200. you have crossed the limit. 
+                //     your description is too long. our max limit is 200. you have crossed the limit. 
                 //    </span></div>`
 
         } else {
@@ -987,7 +987,7 @@ if (document.getElementById("sppiner")) {
                 // setTimeout(errormodel, 100)
             document.getElementById("h-q-n").style.display = "block"
             fo.style.display = "none"
-            localStorage.getItem("draft") ? te.innerHTML = JSON.parse(localStorage.getItem("draft")).title : console.error(SyntaxError("An Error Ocurred"))
+            localStorage.getItem("draft") ? te.innerText = JSON.parse(localStorage.getItem("draft")).title : console.error(SyntaxError("An Error Ocurred"))
 
 
         }
@@ -1067,7 +1067,7 @@ if (document.getElementById("sppiner")) {
         } else {
 
 
-
+            window.location = "/"
         }
 
     }
