@@ -541,7 +541,13 @@ body {
 .h-59 {
     height: 59px;
 }
-
+#uploadImg {
+    width: 150px;
+    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 100%;
+}
 .ml-16-perc {
     margin-left: 16%;
 }
@@ -572,13 +578,7 @@ body {
     display: none;
 }
 
-#uploadImg {
-    width: 150px;
-    height: 150px;
-    max-width: 150px;
-    max-height: 150px;
-    border-radius: 100%;
-}
+
 
 #nones1 {
     margin-top: 12px;
