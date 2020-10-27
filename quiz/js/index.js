@@ -1071,3 +1071,36 @@ if (document.getElementById("sppiner")) {
         }
 
     }
+
+    function addClassToAnElementByID(id_, class_) {
+
+        document.getElementById(id_).className = class_;
+
+    }
+    addClassToAnElementByID("chose-h", "h-80px")
+
+    function delete_parentNode(t) {
+
+        t.parentNode.remove()
+    }
+
+}
+/*comment 
+//745 for now
+            if (JSON.parse(localStorage.getItem("draft")) && JSON.parse(localStorage.getItem("draft")).question) {
+                var obj = JSON.parse(localStorage.getItem("draft"))
+                obj.title = obje.title
+                obj.description = obje.description
+
+                localStorage.setItem("draft", JSON.stringify(obj))
+                noqtoq("the ib --true tab true")
+
+
+            } else {  
+
+                localStorage.setItem("draft", JSON.stringify(obje))
+
+            }
+
+*/
+//"
