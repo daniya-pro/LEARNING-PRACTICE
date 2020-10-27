@@ -631,6 +631,9 @@ if (document.getElementById("sppiner")) {
         }
     }
 
+    ddl.addEventListener("change", drdown)
+    var p;
+
     function drdown() {
         var Radio_el_parent = document.getElementById("add-Radio_elements")
         Radio_el_parent.innerHTML = ""
@@ -708,9 +711,6 @@ if (document.getElementById("sppiner")) {
 
         }
     }
-    ddl.addEventListener("change", drdown)
-    var p;
-
     var quiz = document.getElementById('addquiz-next')
     var fo = document.getElementById('forms')
     document.getElementById("Add-sub").addEventListener("click", singmul)
@@ -720,6 +720,8 @@ if (document.getElementById("sppiner")) {
         document.getElementById("change-me").style.display = "none"
         document.getElementById("prewiewq").style.display = "block"
         var obj = JSON.parse(localStorage.getItem("draft"))
+        
+    
         var answer = []
         var LGQQ = JSON.parse(localStorage.getItem("QAdraft"))
         var doca = document.querySelectorAll(".ans")
@@ -1069,36 +1071,3 @@ if (document.getElementById("sppiner")) {
         }
 
     }
-
-    function addClassToAnElementByID(id_, class_) {
-
-        document.getElementById(id_).className = class_;
-
-    }
-    addClassToAnElementByID("chose-h", "h-80px")
-
-    function delete_parentNode(t) {
-
-        t.parentNode.remove()
-    }
-
-}
-/*comment 
-//745 for now
-            if (JSON.parse(localStorage.getItem("draft")) && JSON.parse(localStorage.getItem("draft")).question) {
-                var obj = JSON.parse(localStorage.getItem("draft"))
-                obj.title = obje.title
-                obj.description = obje.description
-
-                localStorage.setItem("draft", JSON.stringify(obj))
-                noqtoq("the ib --true tab true")
-
-
-            } else {
-
-                localStorage.setItem("draft", JSON.stringify(obje))
-
-            }
-
-*/
-//"
