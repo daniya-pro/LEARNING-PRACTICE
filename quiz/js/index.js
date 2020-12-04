@@ -100,31 +100,6 @@ if (document.getElementById("sppiner")) {
 
 
 
-    function goToLogin() {
-        document.getElementById("disnones").style.display = "none"
-
-        document.getElementById("nonone").style.display = "none"
-        document.getElementById("nonone2").style.display = "none"
-        document.getElementById("nonone0").style.display = "none"
-            //hide every element with class name signupOnly
-        var signup = document.querySelectorAll('.signupOnly');
-        signup.forEach(function(a) {
-                a.setAttribute("style", "display:none !important")
-            })
-            //hiding funtion ends here
-
-
-        //visible evey element with class name loginOnly
-        var login = document.querySelectorAll('.loginOnly');
-        login.forEach(function(a) {
-                document.getElementById("changetext").innerText = "LOGIN"
-
-                a.setAttribute("style", "display:inline-flex !important")
-            })
-            //visibling function ends here
-            //an element will be visible with id loginonly
-        document.getElementById("loginonly").setAttribute("style", "display:block !important")
-    }
 
     function goToSignup() {
         document.getElementById("disnones").style.display = "none"
@@ -186,6 +161,32 @@ if (document.getElementById("sppiner")) {
 
     }
 
+    function goToLogin() {
+        document.getElementById("disnones").style.display = "none"
+
+        document.getElementById("nonone").style.display = "none"
+        document.getElementById("nonone2").style.display = "none"
+        document.getElementById("nonone0").style.display = "none"
+            //hide every element with class name signupOnly
+        var signup = document.querySelectorAll('.signupOnly');
+        signup.forEach(function(a) {
+                a.setAttribute("style", "display:none !important")
+            })
+            //hiding funtion ends here
+
+
+        //visible evey element with class name loginOnly
+        var login = document.querySelectorAll('.loginOnly');
+        login.forEach(function(a) {
+                document.getElementById("changetext").innerText = "LOGIN"
+
+                a.setAttribute("style", "display:inline-flex !important")
+            })
+            //visibling function ends here
+            //an element will be visible with id loginonly
+        document.getElementById("loginonly").setAttribute("style", "display:block !important")
+    }
+
     function ValidSign() {
         //ids of inputs/vaiable portion
         var fname = document.getElementById("First")
@@ -218,7 +219,7 @@ if (document.getElementById("sppiner")) {
         //validation start here
 
 
-        if (fnamval.length <= 0) {
+        if (fnamval.length === 0) {
             dinone.style.display = "block"
             err.innerHTML += `<li class="a" id="a" value="❌"> please fill the first feild</li>`
             fnamval.length === 0 ? console.log("true lengh is 0") : console.log("false lengh is not 0")
@@ -227,37 +228,11 @@ if (document.getElementById("sppiner")) {
             fnameb = true
             console.log("value of input of first name is correct" + fnameb)
 
-            var ida = document.getElementsByTagName("li")
-            var realaray = Array.from(ida)
 
 
-            if (localStorage.getItem("signup")) {
-                var k = JSON.parse(localStorage.getItem("signup"))
-                k.forEach(function(a, i) {
-                    dinone.style.display !== "block" ? dinone.style.display = "block" : console.log("its display block aleady")
-
-                    k[i].Fname.toLowerCase().trim() === fnamval.toLowerCase().trim() ? err.innerHTML += "<li class='a' id='a' value='❌'>please write any other first name in first field because it is taken by another user</li>" : console.log("all is right");
-
-                    k[i].Fname.toLowerCase().trim() === fnamval.toLowerCase().trim() ? fnameb = false : fnameb = true
-                    console.log("flag fnameb ==>", fnameb)
 
 
-                })
-            } else {
 
-
-                fnameb = true
-
-
-            }
-
-            realaray.forEach(function(abc, i) {
-
-                if (realaray[i].className === "a") {
-                    realaray[i].remove()
-                }
-
-            })
 
         }
         if (lnameval.length === 0) {
@@ -281,51 +256,56 @@ if (document.getElementById("sppiner")) {
 
             })
         }
-
-        if (regex.test(emailval) === false) {
+        if (emailval.toLowerCase().trim() === JSON.parse(localStorage.getItem("signup")).Email) {
+            document.getElementById("nonone").display = "block"
             mailb = false
-            dinone.style.display !== "block" ? dinone.style.display = "block" : console.log("its display block aleady")
-            emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">  please fill the third feild</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  please write a correct email in third field</li>`
-
         } else {
 
-            if (localStorage.getItem("signup")) {
+            if (regex.test(emailval) === false) {
+                mailb = false
+                dinone.style.display !== "block" ? dinone.style.display = "block" : console.log("its display block aleady")
+                emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">  please fill the third feild</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  please write a correct email in third field</li>`
 
-                var k = JSON.parse(localStorage.getItem("signup"))
-                k.forEach(function(a, i) {
-                    console.log("flag mail ==>", mailb)
-                    var non = document.getElementById("nonone")
-                    var non2 = document.getElementById("nonone2")
-                    k[i].Email.toLowerCase() === emailval.toLowerCase() ? non.style.display = "block" : console.log("all is right");
-                    k[i].Email.toLowerCase() === emailval.toLowerCase() ? non2.style.display = "block" : console.log("all is right");
-
-                    k[i].Email.toLowerCase() === emailval.toLowerCase() ? mailb = false : mailb = true
-
-
-                })
             } else {
-                mailb = true
-                console.log("mail " + mailb)
+
+                if (localStorage.getItem("signup")) {
+
+                    var k = JSON.parse(localStorage.getItem("signup"))
+                    Object.keys(k).forEach(function(a, i) {
+                        console.log(a)
+                        console.log("flag mail ==>", mailb)
+                        var non = document.getElementById("nonone")
+                        var non2 = document.getElementById("nonone2")
+                        k.Email.toLowerCase() === emailval.toLowerCase() ? non.style.display = "block" : console.log("all is right");
+                        k.Email.toLowerCase() === emailval.toLowerCase() ? non2.style.display = "block" : console.log("all is right");
+
+                        k.Email.toLowerCase() === emailval.toLowerCase() ? mailb = false : mailb = true
+
+
+                    })
+                } else {
+                    mailb = true
+                    console.log("mail " + mailb)
 
 
 
 
-            }
-
-
-            var idc = document.getElementsByTagName("li")
-
-            var realaray = Array.from(idc)
-            realaray.forEach(function(abc, i) {
-
-                if (realaray[i].className === "c") {
-                    realaray[i].remove()
                 }
 
-            })
 
+                var idc = document.getElementsByTagName("li")
+
+                var realaray = Array.from(idc)
+                realaray.forEach(function(abc, i) {
+
+                    if (realaray[i].className === "c") {
+                        realaray[i].remove()
+                    }
+
+                })
+
+            }
         }
-
         if (passval.length <= 5) {
             pasb = false
 
@@ -386,6 +366,7 @@ if (document.getElementById("sppiner")) {
             }
 
         }
+        var non = document.getElementById("nonone")
 
 
         if (fnameb === true && lnamb === true && mailb === true && pasb === true) {
@@ -399,8 +380,31 @@ if (document.getElementById("sppiner")) {
 
             window.location.reload()
 
-        }
+        } else {
 
+            console.log("first", fnameb, "last", lnamb, "@", mailb, "**", pasb)
+            if ((mailb !== true && regex.test(emailval) === false) || (mailb !== true && emailval.toLowerCase().trim() === JSON.parse(localStorage.getItem("signup")).Email)) {
+                mailb !== true && regex.test(emailval) === false ?
+                    err.innerHTML = `<li class="c" id="c" value="❌">  please write a valid email </li>` :
+                    non.style.display = "block";
+
+                mailb !== true && regex.test(emailval) === false ?
+                    err.style.display = 'block' : non.style.display = "block";
+
+                mailb !== true && regex.test(emailval) === false ? non.style.display = "none" : non.style.display = "block"
+
+                mailb !== true && regex.test(emailval) === false ?
+                    err.style.display = 'block' : err.style.display = "none"
+            } else {
+                err.style.display = 'block'
+                non.style.display = 'none'
+
+                err.innerHTML = `<li class="c" id="c" value="❌"> please fill all the fields correctlyy </li>`
+
+            }
+
+
+        }
         var non = document.getElementById("nonone")
         var non2 = document.getElementById("nonone2")
         var non0 = document.getElementById("nonone0")
@@ -674,7 +678,7 @@ if (document.getElementById("sppiner")) {
                     </div>
                     <br>
               `
-                    document.getElementById(`l${ifc}`).innerText = `${draftloc.ans[i]}`
+                    document.getElementById(`l${ifc}`).innerText = `${draftloc.ans[i].match(/<(.|\n)*?>/g)}`
                 }
 
             }
@@ -697,11 +701,11 @@ if (document.getElementById("sppiner")) {
                     <div class="field">
                     <div class="ui radio checkbox">
                         <input type="radio" class="run" value="${draftloc.ans[i]}" id="r${IFR}" name="number">
-                        <label>${draftloc.ans[i]}</label>
+                        <label id="la${i}">${draftloc.ans[i]}</label>
                     </div>
                 </div>
                 `
-
+                    document.getElementById(`la${i}`).innerText = draftloc.ans[i]
                 }
 
             }
@@ -720,8 +724,8 @@ if (document.getElementById("sppiner")) {
         document.getElementById("change-me").style.display = "none"
         document.getElementById("prewiewq").style.display = "block"
         var obj = JSON.parse(localStorage.getItem("draft"))
-        
-    
+
+
         var answer = []
         var LGQQ = JSON.parse(localStorage.getItem("QAdraft"))
         var doca = document.querySelectorAll(".ans")
@@ -906,6 +910,7 @@ if (document.getElementById("sppiner")) {
         }
 
     }
+
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
         a(modaltohide);
