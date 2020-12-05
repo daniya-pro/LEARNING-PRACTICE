@@ -202,6 +202,7 @@ if (document.getElementById("sppiner")) {
         var fnamval = fname.value;
         var lnameval = lname.value;
         var emailval = email.value;
+        err.innerHTML=''
 
         //    var pass = document.getElementById("un-hide")     var passval = pass.value
 
@@ -260,12 +261,16 @@ if (document.getElementById("sppiner")) {
 
             })
         }
-        if (emailval.toLowerCase().trim() === JSON.parse(localStorage.getItem("signup")).Email) {
-            document.getElementById("nonone").display = "block"
+       
+        for(i=0; i < JSON.parse(localStorage.getItem("signup").length); i++){
+      var stor= JSON.parse(localStorage.getItem("signup"))
+      stor[i]=JSON.parse(stor[i])
+        if (localStorage.getItem("signup")&&emailval.toLowerCase().trim() === stor[i].Email.trim().toLowerCase()) {
+            document.getElementById("nonone").style.display = "block"
             mailb = false
         } else {
 
-            if (regex.test(emailval) === false) {
+            if (regex.test(emailval.trim().toLowerCase()) === false) {
                 mailb = false
                 dinone.style.display !== "block" ? dinone.style.display = "block" : console.log("its display block aleady")
                 emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">  please fill the third feild</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  please write a correct email in third field</li>`
@@ -275,15 +280,17 @@ if (document.getElementById("sppiner")) {
                 if (localStorage.getItem("signup")) {
 
                     var k = JSON.parse(localStorage.getItem("signup"))
-                    Object.keys(k).forEach(function(a, i) {
-                        console.log(a)
+
+                   k.forEach(function(a, i) {
+                    k[i]=JSON.parse(k[i])
+                    console.log(a)
                         console.log("flag mail ==>", mailb)
                         var non = document.getElementById("nonone")
                         var non2 = document.getElementById("nonone2")
-                        k.Email.toLowerCase() === emailval.toLowerCase() ? non.style.display = "block" : console.log("all is right");
-                        k.Email.toLowerCase() === emailval.toLowerCase() ? non2.style.display = "block" : console.log("all is right");
+                        k[i].Email.toLowerCase() === emailval.toLowerCase() ? non.style.display = "block" : console.log("all is right");
+                        k[i].Email.toLowerCase() === emailval.toLowerCase() ? non2.style.display = "block" : console.log("all is right");
 
-                        k.Email.toLowerCase() === emailval.toLowerCase() ? mailb = false : mailb = true
+                        k[i].Email.toLowerCase() === emailval.toLowerCase() ? mailb = false : mailb = true
 
 
                     })
@@ -310,6 +317,7 @@ if (document.getElementById("sppiner")) {
 
             }
         }
+    }
         if (passval.length <= 5) {
             pasb = false
 
@@ -371,16 +379,27 @@ if (document.getElementById("sppiner")) {
 
         }
         var non = document.getElementById("nonone")
+        var e = document.getElementsByClassName("e")
+        if (e.length !== 1) {
 
+            for (var i = 0; i < e.length; i++) {
+                e[i].remove()
+
+            }
+
+        }
 
         if (fnameb === true && lnamb === true && mailb === true && pasb === true) {
             var only1user = JSON.stringify({ Fname: fnamval, Lname: lnameval, Email: emailval, Password: passval })
-            var signupitem = localStorage.getItem("signup") ? localStorage.getItem("signup") : []
+            var signupitem = localStorage.getItem("signup") ?
+            Array.isArray(JSON.parse(localStorage.getItem("signup")))?JSON.parse(localStorage.getItem("signup")):[JSON.parse(localStorage.getItem("signup"))] : []
             signupitem.push(only1user)
-            localStorage.setItem("signup", signupitem)
+//[JSON.parse(localStorage.getItem)]
+            localStorage.setItem("signup", JSON.stringify(signupitem))
 
             localStorage.setItem("user", only1user)
             dinone.style.display = "none"
+
 
             window.location.reload()
 
@@ -390,21 +409,8 @@ if (document.getElementById("sppiner")) {
 
             alert()
 
-            mailb !== true && regex.test(emailval) === false ?
-                err.innerHTML = `<li class="c" id="c" value="❌">  please write a valid email </li>` :
-                non.style.display = "block";
-
-            mailb !== true && regex.test(emailval) === false ?
-                erro.style.display = 'block' : non.style.display = "block";
-
-            mailb !== true && regex.test(emailval) === false ? non.style.display = "none" : non.style.display = "block"
-
-            mailb !== true && regex.test(emailval) === false ?
-                erro.style.display = 'block' : erro.style.display = "none"
-            erro.style.display = 'block'
-            non.style.display = 'none'
-
-            err.innerHTML = `<li class="c" id="c" value="❌"> please fill all the fields correctlyy </li>`
+   
+            err.innerHTML += `<li class="e" id="e" value="❌"> please fill all the fields correctly </li>`
 
 
 
@@ -920,6 +926,9 @@ if (document.getElementById("sppiner")) {
         var dr = JSON.parse(localStorage.getItem("draft"))
         console.log(cons)
         if (dr && dr.question) {
+     
+     
+     
             if (nq.innerText.toLowerCase() === "no questions") {
 
                 nq.innerHTML = `${dr.question} <br>`
@@ -1095,3 +1104,4 @@ if (document.getElementById("sppiner")) {
         }
 
     }
+}
