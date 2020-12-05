@@ -60,8 +60,8 @@ if (document.getElementById("sppiner")) {
             document.getElementById("nonone").display = "none"
             document.getElementById("nonone2").style.display = "none"
             document.getElementById("nonone0").display = "none"
-            document.getElementById("errors").innerHTML = ""
-            document.getElementById("errors").innerHTML = ""
+            document.getElementById("errors2").innerHTML = ""
+            document.getElementById("errors2").innerHTML = ""
 
 
             // $('.ui.modal')
@@ -195,7 +195,9 @@ if (document.getElementById("sppiner")) {
         var pass = document.getElementById("un-hide")
 
         // thier values
-        var err = document.getElementById("errors")
+        var erro = document.getElementById("errors");
+
+        var err = document.getElementById("errors2")
         var dinone = document.getElementById("disnones")
         var fnamval = fname.value;
         var lnameval = lname.value;
@@ -222,6 +224,8 @@ if (document.getElementById("sppiner")) {
         if (fnamval.length === 0) {
             dinone.style.display = "block"
             err.innerHTML += `<li class="a" id="a" value="❌"> please fill the first feild</li>`
+            alert(err.innerHTML)
+
             fnamval.length === 0 ? console.log("true lengh is 0") : console.log("false lengh is not 0")
             fnameb = false
         } else {
@@ -383,25 +387,26 @@ if (document.getElementById("sppiner")) {
         } else {
 
             console.log("first", fnameb, "last", lnamb, "@", mailb, "**", pasb)
-            if ((mailb !== true && regex.test(emailval) === false) || (mailb !== true && emailval.toLowerCase().trim() === JSON.parse(localStorage.getItem("signup")).Email)) {
-                mailb !== true && regex.test(emailval) === false ?
-                    err.innerHTML = `<li class="c" id="c" value="❌">  please write a valid email </li>` :
-                    non.style.display = "block";
 
-                mailb !== true && regex.test(emailval) === false ?
-                    err.style.display = 'block' : non.style.display = "block";
+            alert()
 
-                mailb !== true && regex.test(emailval) === false ? non.style.display = "none" : non.style.display = "block"
+            mailb !== true && regex.test(emailval) === false ?
+                err.innerHTML = `<li class="c" id="c" value="❌">  please write a valid email </li>` :
+                non.style.display = "block";
 
-                mailb !== true && regex.test(emailval) === false ?
-                    err.style.display = 'block' : err.style.display = "none"
-            } else {
-                err.style.display = 'block'
-                non.style.display = 'none'
+            mailb !== true && regex.test(emailval) === false ?
+                erro.style.display = 'block' : non.style.display = "block";
 
-                err.innerHTML = `<li class="c" id="c" value="❌"> please fill all the fields correctlyy </li>`
+            mailb !== true && regex.test(emailval) === false ? non.style.display = "none" : non.style.display = "block"
 
-            }
+            mailb !== true && regex.test(emailval) === false ?
+                erro.style.display = 'block' : erro.style.display = "none"
+            erro.style.display = 'block'
+            non.style.display = 'none'
+
+            err.innerHTML = `<li class="c" id="c" value="❌"> please fill all the fields correctlyy </li>`
+
+
 
 
         }
@@ -420,7 +425,7 @@ if (document.getElementById("sppiner")) {
 
     function ValidLog() {
         //variables
-        var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+        var regex = /^[\w-\]+@([\w-]+\)+[\w-]{2,4}$/g
         var email = document.getElementById("mail");
         var emailval = email.value;
         var mailb;
@@ -431,8 +436,8 @@ if (document.getElementById("sppiner")) {
 
 
 
-        var err = document.getElementById("errors");
-        var dinone = document.getElementById("disnones")
+        var err = document.getElementById("errors2")
+        var dinone = document.getElementById("errors")
 
 
         //variables end
