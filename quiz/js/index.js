@@ -915,6 +915,27 @@ if (document.getElementById("sppiner")) {
         }
 
     }
+    function noqtoq(cons) {
+        var nq = document.getElementById("no-q")
+        var dr = JSON.parse(localStorage.getItem("draft"))
+        console.log(cons)
+        if (dr && dr.question) {
+            if (nq.innerText.toLowerCase() === "no questions") {
+
+                nq.innerHTML = `${dr.question} <br>`
+
+            } else {
+                nq.innerHTML += `${dr.question} <br>`
+            }
+        }
+
+    }    
+    function hidenoq(modaltohide, textToDisplayInConsole) {
+
+        a(modaltohide);
+        noqtoq(textToDisplayInConsole)
+
+    }
 
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
@@ -1031,21 +1052,7 @@ if (document.getElementById("sppiner")) {
     }
 
 }
-    function noqtoq(cons) {
-        var nq = document.getElementById("no-q")
-        var dr = JSON.parse(localStorage.getItem("draft"))
-        console.log(cons)
-        if (dr && dr.question) {
-            if (nq.innerText.toLowerCase() === "no questions") {
 
-                nq.innerHTML = `${dr.question} <br>`
-
-            } else {
-                nq.innerHTML += `${dr.question} <br>`
-            }
-        }
-
-    }
 
     $('.ui.dropdown')
         .dropdown();
@@ -1088,4 +1095,3 @@ if (document.getElementById("sppiner")) {
         }
 
     }
-
