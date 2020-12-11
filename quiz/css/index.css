@@ -110,7 +110,7 @@
 .quizheading {
     font-family: allhead;
     font-weight: 500!important;
-    margin: 10px 0;
+    margin-top: 37px !important;
     color: black;
     font-size: 50px;
     text-align: center;
@@ -316,17 +316,16 @@
 .hei-54 {
     height: 54px;
 }
-.wb-bw{
 
+.wb-bw {
     word-break: break-word
-
 }
 
 .top-right {
-    position: absolute;
-    right: 0px;
+    position: absolute !important;
+    right: 0px !important;
     font-size: x-large;
-    top: 5px;
+    top: 5px !important;
 }
 
 .center-xxlarge {
@@ -335,7 +334,7 @@
 }
 
 .none {
-    display: none;
+    display: none !important;
 }
 
 .b-radi-0 {
@@ -541,6 +540,7 @@ body {
 .h-59 {
     height: 59px;
 }
+
 #uploadImg {
     width: 150px;
     height: 150px;
@@ -548,6 +548,7 @@ body {
     max-height: 150px;
     border-radius: 100%;
 }
+
 .ml-16-perc {
     margin-left: 16%;
 }
@@ -566,6 +567,10 @@ body {
     top: 0px;
 }
 
+.inline-block {
+    display: inline-block !important;
+}
+
 .ml-5 {
     margin-left: 5px !important;
 }
@@ -578,15 +583,8 @@ body {
     display: none;
 }
 
-
-
 #nones1 {
     margin-top: 12px;
-}
-
-#nones1,
-#nones {
-    display: none;
 }
 
 #changetext {
@@ -765,23 +763,21 @@ select {
         margin-top: 2px;
     }
 }
-@media only screen and (max-width: 376px) {
 
-.MQ-376-T86P{
-
-    top: 86px !important;
-
+@media only screen and (max-width: 404px) {
+    .MQ-376-T86P {
+        top: 86px !important;
+    }
 }
-}
+
 @media only screen and (max-width: 436px) {
-
-.MQ-436-FS-XXS-PL5PPR4P{
-font-size: xx-small;
-padding-left: 5px;
-padding-right: 4px;
-
+    .MQ-436-FS-XXS-PL5PPR4P {
+        font-size: xx-small;
+        padding-left: 5px;
+        padding-right: 4px;
+    }
 }
-}
+
 @media only screen and (max-width: 476px) {
     .m-47 {
         margin-left: 47px!important;
@@ -794,13 +790,6 @@ padding-right: 4px;
     }
 }
 
-@media only screen and (max-width:682px) {
-    .mdq-574none {
-        display: none!important;
-        ;
-    }
-}
-
 @media only screen and (max-width:1000px) {
     .mdq1000-3pc {
         padding-top: 3pc !important;
@@ -808,7 +797,11 @@ padding-right: 4px;
 }
 
 @media screen and (max-width: 786px) {
-    #change-src {
+    .nones1 {
+        height: 37px !important;
+    }
+    #change-src,
+    .h32md {
         height: 37px;
     }
     #change-text {

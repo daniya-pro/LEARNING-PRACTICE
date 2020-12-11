@@ -8,16 +8,9 @@
 //jsonparse
 
 if (document.getElementById("sppiner")) {
-    document.getElementById("close-icon").addEventListener("click", function() {
-        $(".ui.modal").modal("hide")
-    })
+    setTimeout(function() { document.getElementById("sppiner").style.display = "none" }, 1000)
 
-    function removeloading() {
-        var sppiner = document.getElementById("sppiner");
-        sppiner.style.display = "none"
-        sppiner.setAttribute("style", "display:none;")
-    }
-    setTimeout(removeloading, 700);
+
 
     function getUserData() {
         let user = null;
@@ -30,15 +23,19 @@ if (document.getElementById("sppiner")) {
     }
 
     function disnone() {
+
         if (localStorage.getItem('user')) {
-            // var userinf = { Fname: fnamval, Lname: lnameval, Email: emailval, Password: passval };           
 
-            var array = JSON.parse(localStorage.getItem("user"))
+            var UserData = JSON.parse(localStorage.getItem("user"))
 
-            document.getElementById("change-text").innerText = array[0] ? array[0].Fname + " " + array[0].Lname : array.Fname + " " + array.Lname
+            document.getElementById("change-text").innerText = UserData.Fname + " " + UserData.Lname
             document.getElementById("nones").style.display = "inline-block";
             document.getElementById("nones1").style.display = "inline-block";
             document.getElementById("change-src").src = document.getElementById("uploadImg").src
+        } else {
+
+            document.getElementById("nones").style.display = "none";
+            document.getElementById("nones1").style.display = "none";
         }
 
     }
@@ -202,7 +199,7 @@ if (document.getElementById("sppiner")) {
         var fnamval = fname.value;
         var lnameval = lname.value;
         var emailval = email.value;
-        err.innerHTML=''
+        err.innerHTML = ''
 
         //    var pass = document.getElementById("un-hide")     var passval = pass.value
 
@@ -242,7 +239,7 @@ if (document.getElementById("sppiner")) {
         }
         if (lnameval.length === 0) {
             lnamb = false
-            dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
+            dinone.style.display = "block"
             err.innerHTML += `<li class="b" id="b" value="❌"> please fill the second feild</li>`
 
         } else {
@@ -261,13 +258,17 @@ if (document.getElementById("sppiner")) {
 
             })
         }
-       
-        for(i=0; i < JSON.parse(localStorage.getItem("signup").length); i++){
-      var stor= JSON.parse(localStorage.getItem("signup"))
-      stor[i]=JSON.parse(stor[i])
-        if (localStorage.getItem("signup")&&emailval.toLowerCase().trim() === stor[i].Email.trim().toLowerCase()) {
-            document.getElementById("nonone").style.display = "block"
-            mailb = false
+        if (localStorage.getItem("signup")) {
+            for (i = 0; i < JSON.parse(localStorage.getItem("signup").length); i++) {
+                var stor = JSON.parse(localStorage.getItem("signup"))
+
+                stor[i] = JSON.parse(stor[i])
+
+                if (emailval.toLowerCase().trim() === stor[i].Email.trim().toLowerCase()) {
+                    document.getElementById("nonone").style.display = "block"
+                    mailb = false
+                }
+            }
         } else {
 
             if (regex.test(emailval.trim().toLowerCase()) === false) {
@@ -281,9 +282,9 @@ if (document.getElementById("sppiner")) {
 
                     var k = JSON.parse(localStorage.getItem("signup"))
 
-                   k.forEach(function(a, i) {
-                    k[i]=JSON.parse(k[i])
-                    console.log(a)
+                    k.forEach(function(a, i) {
+                        k[i] = JSON.parse(k[i])
+                        console.log(a)
                         console.log("flag mail ==>", mailb)
                         var non = document.getElementById("nonone")
                         var non2 = document.getElementById("nonone2")
@@ -317,14 +318,12 @@ if (document.getElementById("sppiner")) {
 
             }
         }
-    }
         if (passval.length <= 5) {
             pasb = false
 
             passval.length === 0 ? err.innerHTML += `<li class="d" id="d" value="❌"> please fill the fourth feild</li>` : err.innerHTML += `<li class="d" id="d" value="❌">  please write atleast 6 letters for password in fourth feild</li>`
 
-            dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
-
+            dinone.style.display = "block"
         } else {
 
             pasb = true
@@ -392,9 +391,9 @@ if (document.getElementById("sppiner")) {
         if (fnameb === true && lnamb === true && mailb === true && pasb === true) {
             var only1user = JSON.stringify({ Fname: fnamval, Lname: lnameval, Email: emailval, Password: passval })
             var signupitem = localStorage.getItem("signup") ?
-            Array.isArray(JSON.parse(localStorage.getItem("signup")))?JSON.parse(localStorage.getItem("signup")):[JSON.parse(localStorage.getItem("signup"))] : []
+                Array.isArray(JSON.parse(localStorage.getItem("signup"))) ? JSON.parse(localStorage.getItem("signup")) : [JSON.parse(localStorage.getItem("signup"))] : []
             signupitem.push(only1user)
-//[JSON.parse(localStorage.getItem)]
+                //[JSON.parse(localStorage.getItem)]
             localStorage.setItem("signup", JSON.stringify(signupitem))
 
             localStorage.setItem("user", only1user)
@@ -407,9 +406,9 @@ if (document.getElementById("sppiner")) {
 
             console.log("first", fnameb, "last", lnamb, "@", mailb, "**", pasb)
 
-            alert()
 
-   
+
+
             err.innerHTML += `<li class="e" id="e" value="❌"> please fill all the fields correctly </li>`
 
 
@@ -443,7 +442,7 @@ if (document.getElementById("sppiner")) {
 
 
         var err = document.getElementById("errors2")
-        var dinone = document.getElementById("errors")
+        var dinone = document.getElementById("disnones")
 
 
         //variables end
@@ -453,21 +452,21 @@ if (document.getElementById("sppiner")) {
         if (localStorage.getItem("signup")) {
             var ok = JSON.parse(localStorage.getItem("signup"))
             ok.forEach(function(a, i) {
+                ok[i] = JSON.parse(ok[i])
                 vamail = ok[i].Email.toLowerCase().trim() === emailval.toLowerCase().trim() ? emailval : ""
 
-            })
-
-
-            ok.forEach(function(a, i) {
                 vapass = ok[i].Password.toLowerCase().trim() === passval.toLowerCase().trim() ? vapass : ""
-
             })
+
+
+
+
+
         }
-        //for laterz
         if (vamail !== emailval) {
             mailb = false
-            dinone.style.display === "block" ? console.log("its display block already in mail") : dinone.style.display = "block"
-            ok ? emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">  please fill the 3rd feild</li>` : regex.test(emailval) !== true ? err.innerHTML += `<li class="c" id="c" value="❌">  please write a valid Email</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  sorry we cannotind  fany email like this</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  sorry we cannot find any email like this</li>`;
+            dinone.style.display = "block"
+            ok ? emailval.length === 0 ? err.innerHTML += `<li class="c" id="c" value="❌">  please fill the 3rd feild</li>` : regex.test(emailval) !== true ? err.innerHTML += `<li class="c" id="c" value="❌">  please write a valid Email</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  sorry we cannot find any email like this</li>` : err.innerHTML += `<li class="c" id="c" value="❌">  sorry we cannot find any email like this</li>`;
 
         } else {
             mailb = true
@@ -484,11 +483,12 @@ if (document.getElementById("sppiner")) {
             })
 
         }
-        if (passval !== vapass) {
+        if (vapass === '' || vapass === " ") {
             pasb = false
 
-            ok ? passval.length === 0 ? err.innerHTML += `<li class="d" id="d" value="❌">  please fill the 4rth feild</li>` : err.innerHTML += `<li class="d" id="d" value="❌">  sorry we cannot find any Password like this</li>` : err.innerHTML += `<li class="d" id="d" value="❌">  sorry we cannot find any Password like this</li>`;
-            dinone.style.display === "block" ? console.log("its display block already") : dinone.style.display = "block"
+            ok ? passval.length === 0 ? err.innerHTML += `<li class="d" id="d" value="❌">  please fill the 4rth feild</li>` : err.innerHTML += `<li class="d" id="d" value="❌">  sorry we cannot find any Password like this</li>` :
+                err.innerHTML += `<li class="d" id="d" value="❌">  sorry we cannot find any Password like this</li>`;
+            dinone.style.display = "block"
 
         } else {
             pasb = true
@@ -529,8 +529,17 @@ if (document.getElementById("sppiner")) {
         }
 
         if (mailb === true && pasb === true) {
+            var UsersData = JSON.parse(localStorage.getItem("signup"))
+            UsersData.forEach(function(e, i) {
 
-            localStorage.setItem("user", localStorage.getItem("signup"))
+                UsersData[i] = JSON.parse(UsersData[i])
+                if (emailval === UsersData[i].Email) {
+                    Finame = UsersData[i].Fname
+                    Laname = UsersData[i].Lname
+                    localStorage.setItem("user", JSON.stringify({ Email: emailval, Password: passval, Fname: Finame, Lname: Laname }))
+
+                }
+            })
             window.location.reload()
             dinone.style.display = "none"
 
@@ -921,14 +930,15 @@ if (document.getElementById("sppiner")) {
         }
 
     }
+
     function noqtoq(cons) {
         var nq = document.getElementById("no-q")
         var dr = JSON.parse(localStorage.getItem("draft"))
         console.log(cons)
         if (dr && dr.question) {
-     
-     
-     
+
+
+
             if (nq.innerText.toLowerCase() === "no questions") {
 
                 nq.innerHTML = `${dr.question} <br>`
@@ -938,7 +948,8 @@ if (document.getElementById("sppiner")) {
             }
         }
 
-    }    
+    }
+
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
         a(modaltohide);
@@ -948,119 +959,120 @@ if (document.getElementById("sppiner")) {
 
     function hidenoq(modaltohide, textToDisplayInConsole) {
 
-    var DGEITS = document.getElementById("title-sub")
-    DGEITS.addEventListener("click", errormodel)
-    quiz.addEventListener("click", function() {
-        var inp1 = document.getElementById("inp1");
-        var t_a = document.getElementById("t-a");
-        var r_m = document.getElementById("red-error");
-        var te = document.getElementById("title");
-        var nq = document.getElementById("no-q");
-        var add = document.getElementById("add");
-        var ib;
-        var t_ab;
-        if (inp1.value.trim().length <= 1) {
-            ib = false
-            r_m.style.display = "block"
-            add.innerHTML += `<div class="a"><i class="x icon f-size-large inline-bl"></i>
+        var DGEITS = document.getElementById("title-sub")
+        DGEITS.addEventListener("click", errormodel)
+        quiz.addEventListener("click", function() {
+            var inp1 = document.getElementById("inp1");
+            var t_a = document.getElementById("t-a");
+            var r_m = document.getElementById("red-error");
+            var te = document.getElementById("title");
+            var nq = document.getElementById("no-q");
+            var add = document.getElementById("add");
+            var ib;
+            var t_ab;
+            if (inp1.value.trim().length <= 1) {
+                ib = false
+                r_m.style.display = "block"
+                add.innerHTML += `<div class="a"><i class="x icon f-size-large inline-bl"></i>
             <span class="f-size-large">
             Please write atleast two letters in the title field
            </span></div>`
 
-        } else {
+            } else {
 
-            ib = true
+                ib = true
 
-            var idd = document.getElementsByTagName("div")
+                var idd = document.getElementsByTagName("div")
 
-            var realaray = Array.from(idd)
-            realaray.forEach(function(abc, i) {
+                var realaray = Array.from(idd)
+                realaray.forEach(function(abc, i) {
 
-                if (realaray[i].className === "a") {
-                    realaray[i].remove()
-                }
+                    if (realaray[i].className === "a") {
+                        realaray[i].remove()
+                    }
 
-            })
+                })
 
-        }
-        if (t_a.value.trim().length <= 1) {
-            t_ab = false
-            r_m.style.display = "block"
-                // t_a.value.trim().length <= 1 ? 
-            add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i> <span class="f-size-large">
+            }
+            if (t_a.value.trim().length <= 1) {
+                t_ab = false
+                r_m.style.display = "block"
+                    // t_a.value.trim().length <= 1 ? 
+                add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i> <span class="f-size-large">
             Please write atleast two letters in the description field
            </span></div>`
-                //    : add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i>
-                //     <span class="f-size-large">
-                //     your description is too long. our max limit is 200. you have crossed the limit. 
-                //     your description is too long. our max limit is 200. you have crossed the limit. 
-                //     your description is too long. our max limit is 200. you have crossed the limit. 
-                //    </span></div>`
+                    //    : add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i>
+                    //     <span class="f-size-large">
+                    //     your description is too long. our max limit is 200. you have crossed the limit. 
+                    //     your description is too long. our max limit is 200. you have crossed the limit. 
+                    //     your description is too long. our max limit is 200. you have crossed the limit. 
+                    //    </span></div>`
 
-        } else {
+            } else {
 
-            t_ab = true
-            var idd = document.getElementsByTagName("div")
+                t_ab = true
+                var idd = document.getElementsByTagName("div")
 
-            var realaray = Array.from(idd)
-            realaray.forEach(function(abc, i) {
+                var realaray = Array.from(idd)
+                realaray.forEach(function(abc, i) {
 
-                if (realaray[i].className === "b") {
-                    realaray[i].remove()
+                    if (realaray[i].className === "b") {
+                        realaray[i].remove()
+                    }
+
+                })
+
+            }
+
+
+            if (ib === true && t_ab === true) {
+                var obje = { description: t_a.value, title: inp1.value }
+                localStorage.setItem("draft", JSON.stringify(obje))
+
+                r_m.style.display = "none"
+                    // setTimeout(errormodel, 100)
+                document.getElementById("h-q-n").style.display = "block"
+                fo.style.display = "none"
+                localStorage.getItem("draft") ? te.innerText = JSON.parse(localStorage.getItem("draft")).title : console.error(SyntaxError("An Error Ocurred"))
+
+
+            }
+
+
+
+            var a = document.getElementsByClassName("a")
+            if (a.length !== 1) {
+
+                for (var i = 0; i < a.length; i++) {
+                    a[i].remove()
+
                 }
 
-            })
+            }
+            var b = document.getElementsByClassName("b")
+            if (b.length !== 1) {
 
-        }
+                for (var i = 0; i < b.length; i++) {
+                    b[i].remove()
 
-
-        if (ib === true && t_ab === true) {
-            var obje = { description: t_a.value, title: inp1.value }
-            localStorage.setItem("draft", JSON.stringify(obje))
-
-            r_m.style.display = "none"
-                // setTimeout(errormodel, 100)
-            document.getElementById("h-q-n").style.display = "block"
-            fo.style.display = "none"
-            localStorage.getItem("draft") ? te.innerText = JSON.parse(localStorage.getItem("draft")).title : console.error(SyntaxError("An Error Ocurred"))
-
-
-        }
-
-
-
-        var a = document.getElementsByClassName("a")
-        if (a.length !== 1) {
-
-            for (var i = 0; i < a.length; i++) {
-                a[i].remove()
+                }
 
             }
+        })
+
+        function addClassToAnElementByID(id_, class_) {
+
+            document.getElementById(id_).className = class_;
 
         }
-        var b = document.getElementsByClassName("b")
-        if (b.length !== 1) {
+        addClassToAnElementByID("chose-h", "h-80px")
 
-            for (var i = 0; i < b.length; i++) {
-                b[i].remove()
+        function delete_parentNode(t) {
 
-            }
-
+            t.parentNode.remove()
         }
-    })
-    function addClassToAnElementByID(id_, class_) {
-
-        document.getElementById(id_).className = class_;
 
     }
-    addClassToAnElementByID("chose-h", "h-80px")
-
-    function delete_parentNode(t) {
-
-        t.parentNode.remove()
-    }
-
-}
 
 
     $('.ui.dropdown')
