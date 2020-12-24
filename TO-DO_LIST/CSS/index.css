@@ -1,0 +1,98 @@
+.center {
+    text-align: center !important;
+}
+
+input[type="text"] {
+    width: 200px !important;
+    height: 25px !important;
+    padding-right: 50px !important;
+    padding-left: 10px !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.menueitems {
+    background: lightgreen !important;
+    color: blue !important;
+}
+
+.MI1 {
+    margin-right: 9px !important;
+}
+
+.MI3 {
+    margin-left: 17px !important;
+}
+
+.MI2 {
+    margin-left: 7px !important;
+}
+
+input[type="submit"] {
+    margin-left: -30px !important;
+    height: 25px !important;
+    background: rgb(14 190 14) !important;
+    color: white !important;
+    border: 0 !important;
+    -webkit-appearance: none !important;
+}
+
+textarea:focus,
+input:focus {
+    outline: none !important;
+}
+
+
+/* b-g= border - grayish */
+
+.b-g {
+    border: 2px #c3bebe solid !important;
+}
+
+input {
+    border-radius: 100px !important;
+}
+
+td {
+    text-align: center !important;
+    border: 3px gainsboro solid !important;
+    border-radius: 100px !important;
+    height: 40px !important;
+}
+
+.divider {
+    display: inline-block !important;
+    border-right: 2px gainsboro solid !important;
+    height: 40px !important;
+    bottom: 2px !important;
+    position: absolute !important;
+}
+
+.grmenue {
+    border: 3px lightgreen solid !important;
+    background: lightgreen !important;
+    height: 45px !important;
+    bottom: 2px !important;
+}
+
+.menueitems:hover {
+    border: 1px #ffd079 solid !important;
+}
+
+.td {
+    padding: 7px !important;
+}
+
+.white {
+    background-color: white !important;
+}
+
+.lineThough {
+    text-decoration: line-through;
+}

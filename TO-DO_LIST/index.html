@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./semantic/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="./CSS/index.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAcbuJQ8oMTEwMrEaOWqTA40T1AdBKFBCA",
+            authDomain: "todo-4adcd.firebaseapp.com",
+            projectId: "todo-4adcd",
+            storageBucket: "todo-4adcd.appspot.com",
+            messagingSenderId: "338038270127",
+            appId: "1:338038270127:web:80fac8463487706ca54c5a",
+            measurementId: "G-5FV0ETSX9B"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var database = firebase.database;
+    </script>
+</head>
+
+<body>
+    <div id="spinner" class="ui active inverted dimmer white">
+        <div class="ui massive text loader"></div>
+    </div>
+    <!-- width 50% = w-50 / w-100= width 100%
+    / MI2=menueitems2 MI3=menueitems3 MI1=menueitems1 -->
+
+    <div class="ui center centered card w-50"><br>
+        <!-- tdp = todo parent-->
+        <h1 class="TDP">TO DO LIST</h1>
+        <div class="content">
+            <div id="all-add">
+                <input id="itemname" class="b-g" type="text"><input id="add-item" class="" type="submit" value="add +"></div>
+            <table id="list" class="w-100">
+                <tr>
+
+                    <td id="nothing" style="display:none;">
+                        <div>there are no item</div>
+                    </td>
+
+                </tr>
+                <!-- <border-right: 2px gainsboro solid;
+                <tr>
+                    <td>Eve</td>
+
+                </tr> -->
+            </table>
+        </div>
+        <div class="grmenue">
+
+            <button id='allI' class="ui button menueitems MI1">All </button>
+
+            <div class="divider"></div>
+
+
+
+            <button id='completed' class="ui button menueitems MI2">completed </button>
+
+
+
+            <div class="divider"></div>
+
+
+
+
+            <button id='actived' class="ui button menueitems MI3">active </button>
+        </div>
+        <script src="./JS/index.js"></script>
+        <script src="./semantic/jquery-3.2.1.min.js"></script>
+        <script src="./semantic/Semantic-UI-CSS-master/semantic.min.js"></script>
+
+</body>
+
+</html>
+<!-- -->

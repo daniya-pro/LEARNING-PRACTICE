@@ -698,7 +698,7 @@ if (document.getElementById("sppiner")) {
                     </div>
                     <br>
               `
-                    document.getElementById(`l${ifc}`).innerText = `${draftloc.ans[i].match(/<(.|\n)*?>/g)}`
+                    document.getElementById(`l${IFC}`).innerText = `${draftloc.ans[i].match(/<(.|\n)*?>/g)}`
                 }
 
             }
@@ -736,6 +736,110 @@ if (document.getElementById("sppiner")) {
         }
     }
     var quiz = document.getElementById('addquiz-next')
+    quiz.addEventListener("click", quiznextbtn)
+
+    function quiznextbtn() {
+        var inp1 = document.getElementById("inp1");
+        var t_a = document.getElementById("t-a");
+        var r_m = document.getElementById("red-error");
+        var te = document.getElementById("title");
+        var nq = document.getElementById("no-q");
+        var add = document.getElementById("add");
+        var ib;
+        var t_ab;
+
+        if (inp1.value.trim().length <= 1) {
+            ib = false
+            r_m.style.display = "block"
+            add.innerHTML += `<div class="a"><i class="x icon f-size-large inline-bl"></i>
+        <span class="f-size-large">
+        Please write atleast two letters in the title field
+       </span></div>`
+
+        } else {
+
+            ib = true
+
+            var idd = document.getElementsByTagName("div")
+
+            var realaray = Array.from(idd)
+            realaray.forEach(function(abc, i) {
+
+                if (realaray[i].className === "a") {
+                    realaray[i].remove()
+                }
+
+            })
+
+        }
+        if (t_a.value.trim().length <= 1) {
+            t_ab = false
+            r_m.style.display = "block"
+                // t_a.value.trim().length <= 1 ? 
+            add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i> <span class="f-size-large">
+        Please write atleast two letters in the description field
+       </span></div>`
+                //    : add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i>
+                //     <span class="f-size-large">
+                //     your description is too long. our max limit is 200. you have crossed the limit. 
+                //     your description is too long. our max limit is 200. you have crossed the limit. 
+                //     your description is too long. our max limit is 200. you have crossed the limit. 
+                //    </span></div>`
+
+        } else {
+            t_ab = true
+            var idd = document.getElementsByTagName("div")
+
+            var realaray = Array.from(idd)
+            realaray.forEach(function(abc, i) {
+
+                if (realaray[i].className === "b") {
+                    realaray[i].remove()
+                }
+
+            })
+
+        }
+
+
+        if (ib === true && t_ab === true) {
+
+            var obje = { description: t_a.value, title: inp1.value }
+            localStorage.setItem("draft", JSON.stringify(obje))
+
+            r_m.style.display = "none"
+                // setTimeout(errormodel, 100)
+            document.getElementById("h-q-n").style.display = "block"
+            document.getElementById("h-q-n").className = "block"
+            fo.style.display = "none"
+            localStorage.getItem("draft") ? te.innerText = JSON.parse(localStorage.getItem("draft")).title : console.error(SyntaxError("An Error Ocurred"))
+
+
+        }
+
+
+
+        var a = document.getElementsByClassName("a")
+        if (a.length !== 1) {
+
+            for (var i = 0; i < a.length; i++) {
+                a[i].remove()
+
+            }
+
+        }
+        var b = document.getElementsByClassName("b")
+        if (b.length !== 1) {
+
+            for (var i = 0; i < b.length; i++) {
+                b[i].remove()
+
+            }
+
+        }
+    }
+
+
     var fo = document.getElementById('forms')
     document.getElementById("Add-sub").addEventListener("click", singmul)
 
@@ -875,9 +979,16 @@ if (document.getElementById("sppiner")) {
     }
 
 
-    function a(el) {
+    function a(el, cc2) {
         el.modal("hide")
         document.getElementById('change-me').style.display = 'block';
+        var draftit = JSON.parse(localStorage.getItem("draft"))
+        if (cc2.trim() === 'close2' && draftit.ans) {
+
+            delete draftit.ans
+            delete draftit.question
+            localStorage.setItem("draft", JSON.stringify(draftit))
+        }
     }
     document.getElementById("SBOPQ").addEventListener("click", CROC)
 
@@ -890,16 +1001,20 @@ if (document.getElementById("sppiner")) {
             document.querySelectorAll("input[type=radio]").forEach(function(el, num) {
                 if (el.checked) {
                     BFRB = true
+
                     LKD.ans.forEach(function(ele, i) {
 
                         if (LKD.ans[i] === el.value) {
                             LKD.ans[i] = { value: el.value, isCorrect: true }
                         }
+
                         localStorage.setItem("draft", JSON.stringify(LKD))
                     });
                 }
             })
-            if (BFRB && BFRB === true) { hidenoq($('.ui.modal1.modal'), 'i am using hidenoq') } else {
+            if (BFRB && BFRB === true) {
+                hidenoq($('.ui.modal1.modal'), 'i bfb am using hidenoq')
+            } else {
 
                 $(".modal#EMO2").modal({ allowMultiple: true }).modal('show')
                 setTimeout(function() {
@@ -917,6 +1032,7 @@ if (document.getElementById("sppiner")) {
 
             document.querySelectorAll("input[type=checkbox]").forEach(function(el, num) {
                 if (el.checked) {
+
                     BFCB = true
                     LKD.ans.forEach(function(ele, i) {
 
@@ -949,171 +1065,68 @@ if (document.getElementById("sppiner")) {
         }
 
     }
+    var DGEITS = document.getElementById("title-sub")
+    DGEITS.addEventListener("click", errormodel)
 
     function hidenoq(modaltohide, textToDisplayInConsole) {
-
         a(modaltohide);
         noqtoq(textToDisplayInConsole)
 
     }
 
-    function hidenoq(modaltohide, textToDisplayInConsole) {
+    function addClassToAnElementByID(id_, class_) {
 
-        var DGEITS = document.getElementById("title-sub")
-        DGEITS.addEventListener("click", errormodel)
-        quiz.addEventListener("click", function() {
-            var inp1 = document.getElementById("inp1");
-            var t_a = document.getElementById("t-a");
-            var r_m = document.getElementById("red-error");
-            var te = document.getElementById("title");
-            var nq = document.getElementById("no-q");
-            var add = document.getElementById("add");
-            var ib;
-            var t_ab;
-            if (inp1.value.trim().length <= 1) {
-                ib = false
-                r_m.style.display = "block"
-                add.innerHTML += `<div class="a"><i class="x icon f-size-large inline-bl"></i>
-            <span class="f-size-large">
-            Please write atleast two letters in the title field
-           </span></div>`
-
-            } else {
-
-                ib = true
-
-                var idd = document.getElementsByTagName("div")
-
-                var realaray = Array.from(idd)
-                realaray.forEach(function(abc, i) {
-
-                    if (realaray[i].className === "a") {
-                        realaray[i].remove()
-                    }
-
-                })
-
-            }
-            if (t_a.value.trim().length <= 1) {
-                t_ab = false
-                r_m.style.display = "block"
-                    // t_a.value.trim().length <= 1 ? 
-                add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i> <span class="f-size-large">
-            Please write atleast two letters in the description field
-           </span></div>`
-                    //    : add.innerHTML += `<div class="b"><i class="x icon f-size-large inline-bl"></i>
-                    //     <span class="f-size-large">
-                    //     your description is too long. our max limit is 200. you have crossed the limit. 
-                    //     your description is too long. our max limit is 200. you have crossed the limit. 
-                    //     your description is too long. our max limit is 200. you have crossed the limit. 
-                    //    </span></div>`
-
-            } else {
-
-                t_ab = true
-                var idd = document.getElementsByTagName("div")
-
-                var realaray = Array.from(idd)
-                realaray.forEach(function(abc, i) {
-
-                    if (realaray[i].className === "b") {
-                        realaray[i].remove()
-                    }
-
-                })
-
-            }
-
-
-            if (ib === true && t_ab === true) {
-                var obje = { description: t_a.value, title: inp1.value }
-                localStorage.setItem("draft", JSON.stringify(obje))
-
-                r_m.style.display = "none"
-                    // setTimeout(errormodel, 100)
-                document.getElementById("h-q-n").style.display = "block"
-                fo.style.display = "none"
-                localStorage.getItem("draft") ? te.innerText = JSON.parse(localStorage.getItem("draft")).title : console.error(SyntaxError("An Error Ocurred"))
-
-
-            }
-
-
-
-            var a = document.getElementsByClassName("a")
-            if (a.length !== 1) {
-
-                for (var i = 0; i < a.length; i++) {
-                    a[i].remove()
-
-                }
-
-            }
-            var b = document.getElementsByClassName("b")
-            if (b.length !== 1) {
-
-                for (var i = 0; i < b.length; i++) {
-                    b[i].remove()
-
-                }
-
-            }
-        })
-
-        function addClassToAnElementByID(id_, class_) {
-
-            document.getElementById(id_).className = class_;
-
-        }
-        addClassToAnElementByID("chose-h", "h-80px")
-
-        function delete_parentNode(t) {
-
-            t.parentNode.remove()
-        }
+        document.getElementById(id_).className = class_;
 
     }
+    addClassToAnElementByID("chose-h", "h-80px")
 
+    function delete_parentNode(t) {
 
-    $('.ui.dropdown')
-        .dropdown();
-
-    function backk() {
-        var fo = document.getElementById('forms')
-        document.getElementById("h-q-n").style.display = "none"
-        fo.style.display = "block"
-
+        t.parentNode.remove()
     }
 
-    function errormodel() {
-        var nq = document.getElementById("no-q")
-
-        if (JSON.parse(localStorage.getItem("draft")).question === undefined) {
-
-            $('.special.modal')
-                .modal({
-                    centered: false
-
-                }).modal('setting', 'closable', false)
-
-            .modal('show');
-
-            var modelparent = document.querySelector(".ui.special.modal").parentNode
-            var model = document.querySelector(".ui.special.modal")
-            if (modelparent.tagName.toUpperCase() === "body") {} else {
-                model.style.width = "-webkit-fill-available"
-
-                modelparent.className += " bg-tr p-abs"
-                modelparent.style.top = "0px"
-                modelparent.style.display = "flex"
-                modelparent.setAttribute("style", "top: 0px !important; display:flex;")
-                    // modpar.className.eplace(active)
-            }
-        } else {
+}
 
 
-            window.location = "/"
+$('.ui.dropdown')
+    .dropdown();
+
+function backk() {
+    var fo = document.getElementById('forms')
+    document.getElementById("h-q-n").style.display = "none"
+    fo.style.display = "block"
+
+}
+
+function errormodel() {
+    var nq = document.getElementById("no-q")
+    var dr = JSON.parse(localStorage.getItem("draft"))
+
+    if (!dr.ans) {
+        $('.special.modal')
+            .modal({
+                centered: false
+
+            }).modal('setting', 'closable', false)
+
+        .modal('show');
+
+        var modelparent = document.querySelector(".ui.special.modal").parentNode
+        var model = document.querySelector(".ui.special.modal")
+        if (modelparent.tagName.toUpperCase() === "body") {} else {
+            model.style.width = "-webkit-fill-available"
+
+            modelparent.className += " bg-tr p-abs"
+            modelparent.style.top = "0px"
+            modelparent.style.display = "flex"
+            modelparent.setAttribute("style", "top: 0px !important; display:flex;")
+                // modpar.className.eplace(active)
         }
+    } else {
 
+
+        window.location = "/"
     }
+
 }
